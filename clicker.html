@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" class="p-0 m-0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="clicker.css">
+    <title>REVOFUN GAMES</title>
+</head>
+<body class="bg-slate-950 text-white">
+
+    <header>
+
+        <!-- Navbar Start -->
+        <nav class="flex justify-between items-center py-4 px-8 fixed w-full z-100">
+
+            <!-- Page Logo -->
+            <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" href="#home" class="w-[150px]">
+
+            <!-- Page Navigation -->
+            <ul class="flex gap-8 text-xl">
+                <li><a href="index.html">Home</a></li>
+                <li class="relative group">
+                    <a class="cursor-pointer">Games</a>
+    
+                    <!-- Dropdown Menu -->
+                    <ul class="text-center absolute -translate-x-[63px] top-full mt-0 pt-2 w-48 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+                        <li class="px-4 py-2 duration-300 hover:scale-110 rounded-t-xl">
+                            <a href="clicker.html">Click to Win</a>
+                        </li>
+                        <li class="px-4 py-2 duration-300 hover:scale-110">
+                            <a href="numberguess.html">Guess the Number</a>
+                        </li>
+                        <li class="px-4 py-2 duration-300 hover:scale-110 rounded-b-xl">
+                            <a href="rockpaperscissor.html">Rock Paper Scissors</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+        <!-- Navbar End -->
+
+    </header>
+
+    <main class="relative z-10 bg-slate-950">
+
+        <div id="bg-image">
+
+            <!-- Scoreboard -->
+            <div id="scoreboard" class="absolute bg-indigo-950 border-orange-400 border-5 rounded-xl outline-2 outline-orange-950 opacity-0 p-10 flex flex-col gap-10 left-1/2 -translate-x-1/2 top-1/2 -translate-y-[120px]">
+                <div class="flex flex-col justify-between gap-10">
+                    <div class="flex flex-col items-center text-center rounded-lg">
+                        <p>Current Score</p>
+                        <span id="finalscore" class="bg-indigo-600 w-[200px] rounded-lg">0</span>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <p>Highscore</p>
+                        <span id="highscore" class="bg-indigo-600 w-[200px] rounded-lg">0</span>
+                    </div>
+                </div>
+                <div class="flex justify-center gap-10">
+                    <button class="bg-indigo-900 hover:bg-blue-700 hover:scale-110 transition duration-300 p-4 w-[200px] rounded-lg" onclick="window.location.href='index.html'">Back to Home</button>
+                    <button id="restart" class="bg-indigo-900 hover:bg-blue-700 hover:scale-110 transition duration-300 p-4 w-[200px] rounded-lg">Restart</button>
+                </div>
+            </div>
+
+            <!-- Timer Panel -->
+            <div class="bg-indigo-950 border-orange-400 border-5 rounded-xl outline-2 outline-orange-950 absolute p-4 w-[200px] text-center top-1/7 right-1/2 -translate-x-1/2 opacity-90">
+                <p>TIME : <span id="timer">10</span>s</p>
+            </div>
+
+            <!-- Score Panel -->
+            <div class="bg-indigo-950 border-orange-400 border-5 rounded-xl outline-2 outline-orange-950 absolute p-4 w-[200px] text-center top-1/7 left-1/2 translate-x-1/2 opacity-90">
+                <p>SCORE : <span id="score">0</span></p>
+            </div>
+
+            <!-- Button Image -->
+            <img id="button-img" src="image/REVOFUN_RedCircle.png" alt="">
+            <img id="button-img-1" src="image/REVOFUN_RedCircle_1.png" alt="">
+            <img id="button-img-2" src="image/REVOFUN_RedCircle_2.png" alt="">
+            <img id="button-img-3" src="image/REVOFUN_RedCircle_3.png" alt="">
+            <img id="button-img-start" src="image/REVOFUN_RedCircle_Start.png" alt="">
+
+        </div>
+
+    </main>
+    
+    <script src="clicker.js"></script>
+</body>
+</html>

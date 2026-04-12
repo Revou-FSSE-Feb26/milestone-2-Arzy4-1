@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" class="p-0 m-0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>REVOFUN GAMES</title>
+</head>
+<body class="bg-slate-950 text-white">
+
+    <header>
+
+        <!-- Navbar Start -->
+        <nav class="flex justify-between items-center py-4 px-8 fixed w-full z-100">
+
+            <!-- Page Logo -->
+            <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" href="#home" class="w-[150px]">
+
+            <!-- Page Navigation -->
+            <ul class="flex gap-8 text-xl">
+                <li><a href="index.html">Home</a></li>
+                <li class="relative group">
+                    <a class="cursor-pointer">Games</a>
+    
+                    <!-- Dropdown Menu -->
+                    <ul class="text-center absolute -translate-x-[63px] top-full mt-0 pt-2 w-48 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+                        <li class="px-4 py-2 duration-300 hover:scale-110 rounded-t-xl">
+                            <a href="clicker.html">Click to Win</a>
+                        </li>
+                        <li class="px-4 py-2 duration-300 hover:scale-110">
+                            <a href="numberguess.html">Guess the Number</a>
+                        </li>
+                        <li class="px-4 py-2 duration-300 hover:scale-110 rounded-b-xl">
+                            <a href="rockpaperscissor.html">Rock Paper Scissors</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+        <!-- Navbar End -->
+
+    </header>
+
+    <main class="mb-[400px] relative z-10 bg-slate-950">
+
+        <!-- Home Section Start -->
+        <section id="home">
+
+            <!-- Hero Title & Tagline -->
+            <div class="flex flex-col items-center justify-end h-[100vh] relative z-20 gap-8 py-20">
+
+                <!-- Hero Title -->
+                <h1 class="text-4xl">Welcome to <Strong>REVOFUN</Strong></h1>
+
+                <!-- Hero Tagline -->
+                <h2 class="text-2xl max-w-[60%] text-center">
+                    REVOFUN brings simple games with endless fun, delivering quick and engaging experiences that you can enjoy anytime and anywhere
+                </h2>
+
+        </section>
+        <!-- Home Section End -->
+
+        <!-- Games Section Start -->
+        <section id="games">
+
+            <!-- Latest Games -->
+            <div class="flex justify-center items-center gap-10 py-10">
+
+                <!-- Latest Game Image -->
+                <div id="clicking" class="group"></div>
+
+                <!-- Latest Game Tagline, Description, Call to Action Button -->
+                <div class="flex flex-col gap-6">
+
+                    <!-- Latest Game Tagline-->
+                    <h3>Let's Play <strong>Click to Win!</strong></h3>
+
+                    <!-- Latest Game Description -->
+                    <p class="max-w-[300px]">
+                        Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!</p>
+
+                    <!-- Call to Action Button -->
+                    <button onclick="window.location.href='clicker.html'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Play Now
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Games -->
+            <div class="py-20">
+                <h2 class="text-center text-4xl pb-10">Games</h2>
+
+                <div>
+                    <button id="prev-btn" class="absolute top-[77%] left-[40%] z-50 h-[60px] w-[60px] rounded-[50%] text-[2rem] bg-indigo-700 text-white border-none cursor-pointer pb-[.1em] font-black">←</button>
+                </div>
+                <div>
+                    <button id="next-btn" class="absolute top-[77%] right-[40%] z-50 h-[60px] w-[60px] rounded-[50%] text-[2rem] bg-indigo-700 text-white border-none cursor-pointer pb-[.1em] font-black">→</button>
+                </div>
+
+                <div id="games-wrapper">
+                    <div id="games-container">
+                        <article id="card2" class="fake">
+                            <div class="h-full w-1/2 relative z-20 p-4">
+
+                                <!-- Card 2 Title-->
+                                <h3>GUESS THE NUMBER</h3>
+
+                                <!-- Card 2 Description -->
+                                <p class="max-w-[300px]">
+                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                </p>
+
+                                <!-- Card 2 Call to Action Button -->
+                                <button onclick="window.location.href='numberguess.html'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    Play Now
+                                </button>
+
+                            </div>
+                        </article>
+
+                        <article id="card3" class="fake">
+                            <div class="h-full w-1/2 relative z-20 p-4">
+
+                                <!-- Card 3 Title-->
+                                <h3>ROCK PAPER SCISSORS</h3>
+
+                                <!-- Card 3 Description -->
+                                <p class="max-w-[300px]">
+                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                </p>
+
+                                <!-- Card 3 Call to Action Button -->
+                                <button onclick="window.location.href='rockpaperscissor.html'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    Play Now
+                                </button>
+
+                            </div>
+                        </article>
+                        
+                        <article id="card1">
+                            <div class="h-full w-1/2 relative z-20 p-4">
+
+                                <!-- Card 1 Title-->
+                                <h3>CLICK TO WIN</h3>
+
+                                <!-- Card 1 Description -->
+                                <p class="max-w-[300px]">
+                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                </p>
+
+                                <!-- Card 1 Call to Action Button -->
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" onclick="window.location.href='clicker.html'">
+                                    Play Now
+                                </button>
+
+                            </div>
+                        </article>
+
+                        <article id="card2">
+                            <div class="h-full w-1/2 relative z-20 p-4">
+
+                                <!-- Card 2 Title-->
+                                <h3>GUESS THE NUMBER</h3>
+
+                                <!-- Card 2 Description -->
+                                <p class="max-w-[300px]">
+                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                </p>
+
+                                <!-- Card 2 Call to Action Button -->
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" onclick="window.location.href='numberguess.html'">
+                                    Play Now
+                                </button>
+
+                            </div>
+                        </article>
+
+                        <article id="card3">
+                            <div class="h-full w-1/2 relative z-20 p-4">
+
+                                <!-- Card 3 Title-->
+                                <h3>ROCK PAPER SCISSORS</h3>
+
+                                <!-- Card 3 Description -->
+                                <p class="max-w-[300px]">
+                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                </p>
+
+                                <!-- Card 3 Call to Action Button -->
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" onclick="window.location.href='rockpaperscissor.html'">
+                                    Play Now
+                                </button>
+
+                            </div>
+                        </article>
+
+                        <article id="card1" class="fake">
+                            <div class="h-full w-1/2 relative z-20 p-4">
+
+                                <!-- Card 1 Title-->
+                                <h3>CLICK TO WIN</h3>
+
+                                <!-- Card 1 Description -->
+                                <p class="max-w-[300px]">
+                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                </p>
+
+                                <!-- Card 1Call to Action Button -->
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="window.location.href='clicker.html'">
+                                    Play Now
+                                </button>
+
+                            </div>
+                        </article>
+
+                        <article id="card2" class="fake">
+                            <div class="h-full w-1/2 relative z-20 p-4">
+
+                                <!-- Card 2 Title-->
+                                <h3>GUESS THE NUMBER</h3>
+
+                                <!-- Card 2 Description -->
+                                <p class="max-w-[300px]">
+                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                </p>
+
+                                <!-- Card 2 Call to Action Button -->
+                                <button onclick="window.location.href='numberguess.html'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    Play Now
+                                </button>
+
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- Games Section End -->
+
+        <!-- About Section Start -->
+        <section id="about">
+            <div class="flex py-20 px-10">
+                <div class="bg-linear-to-b from-indigo-900 to-slate-900 rounded-l-[2rem] p-10">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, at neque quas praesentium harum laborum incidunt dignissimos voluptatibus perferendis, optio voluptate. Harum consequuntur excepturi a maiores aut sapiente eveniet repellendus!</p>
+                </div>
+
+                <img src="image/REVOFUN_AboutImage.png" alt="" class="w-[500px] rounded-r-[2rem]">
+            </div>
+        </section>
+        <!-- About Section End -->
+
+    </main>
+
+    <footer class="bg-linear-to-b from-indigo-950 to-slate-900 pt-10 pb-20 fixed bottom-0 w-full">
+
+        <div class="flex flex-col items-center">
+            <img src="image/REVOFUN_Logo.png" alt="REVOFUN Logo" class="w-[200px]">
+
+            <ul id="footer-list" class="flex justify-evenly items-center gap-10">
+                <li>
+                    <a href="image/Linkedin_Logo.png">
+                        <img src="image/Linkedin_Logo.png" alt="LinkedIn Logo" class="w-[40px]">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="image/Gmail_Logo.png">
+                        <img src="image/Gmail_Logo.png" alt="Gmail Logo" class="w-[40px]">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="image/whatsapp.png">
+                        <img src="image/whatsapp.png" alt="WhatsApp Logo" class="w-[40px]">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="image/Instagram_Logo.png">
+                        <img src="image/Instagram_Logo.png" alt="Instagram Logo" class="w-[40px]">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="image/Telegram_Logo.png">
+                        <img src="image/Telegram_Logo.png" alt="Telegram Logo" class="w-[40px]">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="image/Github_Logo.png">
+                        <img src="image/Github_Logo.png" alt="GitHub Logo" class="w-[40px]">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex justify-center text-center text-white pt-20">
+            <p>Latest Update: April 10, 2026</p>
+            <p class="px-2">|</p>
+            <p>&copy; 2026 REVOFUN. All rights reserved.</p>
+        </div>
+
+    </footer>
+    
+    <script src="index.js"></script>
+</body>
+</html>

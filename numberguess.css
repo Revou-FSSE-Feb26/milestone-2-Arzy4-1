@@ -1,0 +1,52 @@
+#bg-image{
+    background-image: url(image/REVOFUN_GNContainer.png);
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
+    position: relative; /* IMPORTANT */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+#button{
+    animation: zoom 2s infinite ease-in-out;
+}
+
+#game-container.activate{
+    animation: fadeIn 1s ease forwards;
+}
+#scoreboard.activate{
+    transition: opacity 2s ease;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes zoom{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

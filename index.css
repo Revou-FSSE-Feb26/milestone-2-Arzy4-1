@@ -1,0 +1,139 @@
+/* Home Section Styles */
+#home{
+    background-image: url(image/REVOFUN_BackgroundImage.png);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    position: relative;
+    height: 100svh;
+    z-index: 10;
+}
+#home::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient( 
+    rgba(49, 46, 129, 0.3) 30%,
+    rgba(2, 6, 23)
+    );
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Games Section Styles */
+#clicking{
+    background-image: url(image/REVOFUN_Clicking.png);
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    width: 60vh;
+    z-index: 10;
+    box-shadow: 0 0 40px rgba(49, 46, 129, 0.9);
+    border-radius: 2rem;
+}
+#games-wrapper{
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 2rem;
+    scroll-behavior: smooth;
+    anchor-name: --games-wrapper;
+    scroll-snap-type: x mandatory;
+    scroll-marker-group: after;
+}
+#games-wrapper::scroll-marker-group{
+    display: flex;
+    justify-content: center;
+    gap: .5em;
+}
+#games-wrapper::-webkit-scrollbar{
+    display: none;
+}
+#games-container{
+    display: flex;
+    margin: 2rem;
+    gap: 5rem;
+}
+#games-container article{
+    flex: 0 0 900px;
+    scroll-snap-align: center;
+    box-shadow: 0px 0px 30px rgba(99, 102, 241, 0.9);
+}
+#games-container article::scroll-marker{
+    content: '';
+    height: .8em;
+    width: .8em;
+    background-color: gray;
+    margin-top: 2em;
+    border-radius: 50%;
+}
+.fake::scroll-marker{
+    display: none;
+}
+#games-container article::scroll-marker:target-current{
+    background-color: #4338ca;
+}
+#card1{
+    background-image: url(image/REVOFUN_Clicking.png);
+}
+#card2{
+    background-image: url(image/REVOFUN_NumberGuessing.png);
+}
+#card3{
+    background-image: url(image/REVOFUN_RockPaperScissors.png);
+}
+#card1, 
+#card2, 
+#card3{
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    width: 100vh;
+    z-index: 10;
+    position: relative;
+    border-radius: 2rem;
+}
+#card1::before, 
+#card2::before, 
+#card3::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, 
+    rgb(30, 27, 75) 10%,
+    rgba(99, 102, 241, 0.3) 
+    );
+    height: 100%;
+    width: 50%;
+    z-index: 10;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+/* Footer Section Styles   */
+#footer-list img{
+    transition: transform 0.5s;
+}
+#footer-list img:hover{
+    transform: scale(1.4);
+}
+
+/* @keyframes carousel{
+    0%      { transform: translateX(0%); }
+    11.11%  { transform: translateX(0%); }
+    22.22%  { transform: translateX(0%); }
+
+    33.33%  { transform: translateX(-102.5%); }
+    44.44%  { transform: translateX(-102.5%); }
+    55.55%  { transform: translateX(-102.5%); }
+
+    66.66%  { transform: translateX(-205%); }
+    77.77%  { transform: translateX(-205%); }
+    88.88%  { transform: translateX(-205%); }
+
+    100%    { transform: translateX(-307.5%); }
+} */
