@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="rockpaperscissor.css">
     <title>REVOFUN GAMES</title>
 </head>
 <body class="bg-slate-950 text-white">
@@ -45,64 +45,68 @@
 
     </header>
 
-    <main class="mb-[400px] relative z-10 bg-slate-950">
+    <main class="relative z-10 bg-slate-950">
 
-        <p>hello world</p>
+        <div id="bg-image" class="flex justify-center items-center">
+            <div id="game-container" class="relative w-[1000px] h-[600px] p-10 flex justify-center items-center overflow-hidden border-4 border-orange-500 rounded-[4rem] shadow-[0_10px_30px_rgba(0,0,0,1)]">
+
+                <!-- Start -->
+                <div id="start" class="absolute flex flex-col items-center justify-center h-full gap-6 text-center">
+                    <h1 class="text-[25px]">Let's Play "<strong>ROCK PAPER SCISSOR</strong>"</h1>
+                    <img id="start-button" src="image/REVOFUN_StartText.png" alt="" class="w-[200px]">
+                </div>
+
+                <!-- Player Choices -->
+                <div id="player-choices-box" class="absolute w-[900px] h-[500px] hidden">
+                    <img id="player-choice" src="image/REVOFUN_RockHand.png" alt="Weapon Rock Image" class="w-[250px] h-[250px] absolute top-1/6 ml-10">
+
+                    <img id="versus" src="image/REVOFUN_VersusSymbol.png" alt="Versus Image" class="w-[300px] h-[250px] relative top-1/6 left-[295px]">
+                    
+                    <img id="computer-choice" src="image/REVOFUN_RockHand.png" alt="Weapon Rock Image" class="w-[250px] h-[250px] rotate-y-[180deg] absolute top-1/6 right-1 mr-10">
+                </div>
+
+                <!-- Weapon Choice -->
+                <div id="weapon" class="flex flex-col items-center justify-between h-full hidden">
+                    <h2 id="weapon-title" class="relative">ROCK PAPER SCISSOR</h2>
+                    <div id="weapon-choice" class="relative flex flex-col items-center gap-8 hidden">   
+                        <h3>Choose Your Weapon</h3>
+                        <ul class="flex justify-center gap-10">
+                            <li class="Rock">
+                                <img src="image/REVOFUN_RockHand1.png" alt="">
+                            </li>
+                            <li class="Paper">
+                                <img src="image/REVOFUN_PaperHand1.png" alt="">
+                            </li>
+                            <li class="Scissor">
+                                <img src="image/REVOFUN_ScissorHand1.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Play Again Button -->
+                    <div id="result-box" class="relative flex flex-col top-[25%] p-4 items-center gap-5  hidden">
+                        <h3 class="relative"></h3>
+                        <div class="flex justify-center gap-10">
+                            <button class="relative bg-indigo-900 hover:bg-blue-700 hover:scale-105 transition duration-300 p-4 w-[200px] rounded-lg" onclick="window.location.href='index.html'">Back to Home</button>
+                            
+                            <button id="restart" class="relative bg-indigo-900 hover:bg-blue-700 hover:scale-105 transition duration-300 p-4 w-[200px] rounded-lg">Restart</button>
+                </div>
+                    </div>
+
+                    <!-- Score Box -->
+                    <div id="score-box">
+                        <h4 id="won">Won: <span>0</span></h3>
+                        <h4 id="lost">Lost: <span>0</span></h3>
+                        <h4 id="draw">Draw: <span>0</span></h3>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
 
     </main>
-
-    <footer class="bg-linear-to-b from-indigo-950 to-slate-900 pt-10 pb-20 fixed bottom-0 w-full">
-
-        <div class="flex flex-col items-center">
-            <img src="image/REVOFUN_Logo.png" alt="REVOFUN Logo" class="w-[200px]">
-
-            <ul id="footer-list" class="flex justify-evenly items-center gap-10">
-                <li>
-                    <a href="image/Linkedin_Logo.png">
-                        <img src="image/Linkedin_Logo.png" alt="LinkedIn Logo" class="w-[40px]">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="image/Gmail_Logo.png">
-                        <img src="image/Gmail_Logo.png" alt="Gmail Logo" class="w-[40px]">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="image/whatsapp.png">
-                        <img src="image/whatsapp.png" alt="WhatsApp Logo" class="w-[40px]">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="image/Instagram_Logo.png">
-                        <img src="image/Instagram_Logo.png" alt="Instagram Logo" class="w-[40px]">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="image/Telegram_Logo.png">
-                        <img src="image/Telegram_Logo.png" alt="Telegram Logo" class="w-[40px]">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="image/Github_Logo.png">
-                        <img src="image/Github_Logo.png" alt="GitHub Logo" class="w-[40px]">
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="flex justify-center text-center text-white pt-20">
-            <p>Latest Update: April 10, 2026</p>
-            <p class="px-2">|</p>
-            <p>&copy; 2026 REVOFUN. All rights reserved.</p>
-        </div>
-
-    </footer>
     
-    <script src="index.js"></script>
+    <script src="rockpaperscissor.js"></script>
 </body>
 </html>
