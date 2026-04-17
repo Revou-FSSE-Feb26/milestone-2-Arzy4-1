@@ -107,7 +107,7 @@ guessBtn.addEventListener("click", () => {
 
         let savedHighScore = Number(localStorage.getItem("highScoreTime")) || 0;
 
-        if (currentScore <= savedHighScore) {
+        if (savedHighScore === 0 || currentScore <= savedHighScore) {
             savedHighScore = currentScore;
             localStorage.setItem("highScoreTime", savedHighScore);
         }
