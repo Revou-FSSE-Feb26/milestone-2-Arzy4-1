@@ -34,3 +34,39 @@ body{
     width: 100%;
     z-index: 10;
 }
+
+.skill-wrapper{
+    margin: auto;
+    display: flex;
+    width: 42.7%;
+    overflow: hidden;
+    background-color: #1e1b4b;
+    border-radius: 1rem;
+}
+.skill-container{
+    display: flex;
+    gap: 1rem;
+    animation: carousel 15s infinite linear;
+    padding-left: 1rem;
+}
+.skill-container li{
+    display: flex;
+    flex: 0 0 5em;
+    height: 5em;
+    border-radius: .2em;
+    align-items: center;
+    justify-content: center;
+}
+.skill-container img{
+    width: 40px;
+    height: 40px;
+}
+
+@keyframes carousel{
+    0%{
+        translate: 0%;
+    }
+    100%{
+        translate: -100%;
+    }
+}
