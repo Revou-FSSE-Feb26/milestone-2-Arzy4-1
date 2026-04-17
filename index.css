@@ -1,3 +1,11 @@
+/* Global */
+body{
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
 /* Home Section Styles */
 #home{
     background-image: url(image/REVOFUN_BackgroundImage.png);
@@ -14,12 +22,17 @@
     top: 0;
     left: 0;
     background: linear-gradient( 
-    rgba(49, 46, 129, 0.3) 30%,
-    rgba(2, 6, 23)
+    rgba(49, 46, 129, 0.5) 30%,
+    rgba(2, 6, 23) 100%
     );
     height: 100%;
     width: 100%;
     z-index: 10;
+}
+#home h1{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 /* Games Section Styles */
@@ -40,7 +53,6 @@
     position: relative;
     border-radius: 2rem;
     scroll-behavior: smooth;
-    anchor-name: --games-wrapper;
     scroll-snap-type: x mandatory;
     scroll-marker-group: after;
 }
@@ -68,7 +80,7 @@
     width: .8em;
     background-color: gray;
     margin-top: 2em;
-    border-radius: 50%;
+    border-radius: 50%;;
 }
 .fake::scroll-marker{
     display: none;
@@ -95,6 +107,7 @@
     z-index: 10;
     position: relative;
     border-radius: 2rem;
+    padding: 1rem;
 }
 #card1::before, 
 #card2::before, 
@@ -105,10 +118,10 @@
     left: 0;
     background: linear-gradient(90deg, 
     rgb(30, 27, 75) 10%,
-    rgba(99, 102, 241, 0.3) 
+    rgba(99, 102, 241, 0.6) 
     );
     height: 100%;
-    width: 50%;
+    width: 40%;
     z-index: 10;
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
@@ -121,19 +134,3 @@
 #footer-list img:hover{
     transform: scale(1.4);
 }
-
-/* @keyframes carousel{
-    0%      { transform: translateX(0%); }
-    11.11%  { transform: translateX(0%); }
-    22.22%  { transform: translateX(0%); }
-
-    33.33%  { transform: translateX(-102.5%); }
-    44.44%  { transform: translateX(-102.5%); }
-    55.55%  { transform: translateX(-102.5%); }
-
-    66.66%  { transform: translateX(-205%); }
-    77.77%  { transform: translateX(-205%); }
-    88.88%  { transform: translateX(-205%); }
-
-    100%    { transform: translateX(-307.5%); }
-} */

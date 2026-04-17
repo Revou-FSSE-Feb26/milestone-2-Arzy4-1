@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <title>REVOFUN GAMES</title>
 </head>
@@ -54,7 +56,7 @@
             <div class="flex flex-col items-center justify-end h-[100vh] relative z-20 gap-8 py-20">
 
                 <!-- Hero Title -->
-                <h1 class="text-4xl">Welcome to <Strong>REVOFUN</Strong></h1>
+                <h1 class="text-4xl">WELCOME TO <Strong>REVOFUN</Strong></h1>
 
                 <!-- Hero Tagline -->
                 <h2 class="text-2xl max-w-[60%] text-center">
@@ -68,7 +70,7 @@
         <section id="games">
 
             <!-- Latest Games -->
-            <div class="flex justify-center items-center gap-10 py-10">
+            <div class="flex justify-center items-center gap-10 p-10">
 
                 <!-- Latest Game Image -->
                 <div id="clicking" class="group"></div>
@@ -77,10 +79,10 @@
                 <div class="flex flex-col gap-6">
 
                     <!-- Latest Game Tagline-->
-                    <h3>Let's Play <strong>Click to Win!</strong></h3>
+                    <h3 class="text-2xl">Let's Play <strong>Click to Win!</strong></h3>
 
                     <!-- Latest Game Description -->
-                    <p class="max-w-[300px]">
+                    <p class="max-w-[400px] text-justify text-xl">
                         Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!</p>
 
                     <!-- Call to Action Button -->
@@ -94,7 +96,7 @@
 
             <!-- Games -->
             <div class="py-20">
-                <h2 class="text-center text-4xl pb-10">Games</h2>
+                <h2 class="text-center text-4xl pb-10">GAMES</h2>
 
                 <div>
                     <button id="prev-btn" class="absolute top-[77%] left-[40%] z-50 h-[60px] w-[60px] rounded-[50%] text-[2rem] bg-indigo-700 text-white border-none cursor-pointer pb-[.1em] font-black">←</button>
@@ -106,18 +108,18 @@
                 <div id="games-wrapper">
                     <div id="games-container">
                         <article id="card2" class="fake">
-                            <div class="h-full w-1/2 relative z-20 p-4">
+                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
 
                                 <!-- Card 2 Title-->
-                                <h3>GUESS THE NUMBER</h3>
+                                <h3 class="text-2xl">GUESS THE NUMBER!</h3>
 
                                 <!-- Card 2 Description -->
-                                <p class="max-w-[300px]">
-                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                <p class="max-w-[300px] text-justify text-xl">
+                                    Test your logic and intuition in this fun and engaging number guessing game. Guess the correct number within a limited time while using hints to guide your choices. Stay sharp, think carefully, and see if you can find the right answer before time runs out!
                                 </p>
 
                                 <!-- Card 2 Call to Action Button -->
-                                <button onclick="window.location.href='numberguess.html'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='numberguess.html'">
                                     Play Now
                                 </button>
 
@@ -125,18 +127,18 @@
                         </article>
 
                         <article id="card3" class="fake">
-                            <div class="h-full w-1/2 relative z-20 p-4">
+                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
 
                                 <!-- Card 3 Title-->
-                                <h3>ROCK PAPER SCISSORS</h3>
+                                <h3 class="text-2xl">ROCK PAPER SCISSORS</h3>
 
                                 <!-- Card 3 Description -->
-                                <p class="max-w-[300px]">
-                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                <p class="max-w-[300px] text-justify text-xl">
+                                    Test your instincts and decision-making in this classic yet exciting game. Choose your weapon and outsmart your opponent. Stay focused, react quickly, and see if you can win before time runs out!
                                 </p>
 
                                 <!-- Card 3 Call to Action Button -->
-                                <button onclick="window.location.href='rockpaperscissor.html'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='rockpaperscissor.html'">
                                     Play Now
                                 </button>
 
@@ -144,18 +146,18 @@
                         </article>
                         
                         <article id="card1">
-                            <div class="h-full w-1/2 relative z-20 p-4">
+                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
 
                                 <!-- Card 1 Title-->
-                                <h3>CLICK TO WIN</h3>
+                                <h3 class="text-2xl">CLICK TO WIN!</h3>
 
                                 <!-- Card 1 Description -->
-                                <p class="max-w-[300px]">
-                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                <p class="max-w-[300px] text-justify text-xl">
+                                    Test your speed and precision in this simple yet addictive clicker game. Tap as fast as you can within a limited time to earn points, challenge your reflexes, and beat your highest score. The faster you click, the higher you climb. How far can you go?
                                 </p>
 
                                 <!-- Card 1 Call to Action Button -->
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" onclick="window.location.href='clicker.html'">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='clicker.html'">
                                     Play Now
                                 </button>
 
@@ -163,18 +165,18 @@
                         </article>
 
                         <article id="card2">
-                            <div class="h-full w-1/2 relative z-20 p-4">
+                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
 
                                 <!-- Card 2 Title-->
-                                <h3>GUESS THE NUMBER</h3>
+                                <h3 class="text-2xl">GUESS THE NUMBER!</h3>
 
                                 <!-- Card 2 Description -->
-                                <p class="max-w-[300px]">
-                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                <p class="max-w-[300px] text-justify text-xl">
+                                    Test your logic and intuition in this fun and engaging number guessing game. Guess the correct number within a limited time while using hints to guide your choices. Stay sharp, think carefully, and see if you can find the right answer before time runs out!
                                 </p>
 
                                 <!-- Card 2 Call to Action Button -->
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" onclick="window.location.href='numberguess.html'">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='numberguess.html'">
                                     Play Now
                                 </button>
 
@@ -182,18 +184,18 @@
                         </article>
 
                         <article id="card3">
-                            <div class="h-full w-1/2 relative z-20 p-4">
+                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
 
                                 <!-- Card 3 Title-->
-                                <h3>ROCK PAPER SCISSORS</h3>
+                                <h3 class="text-2xl">ROCK PAPER SCISSORS</h3>
 
                                 <!-- Card 3 Description -->
-                                <p class="max-w-[300px]">
-                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                <p class="max-w-[300px] text-justify text-xl">
+                                    Test your instincts and decision-making in this classic yet exciting game. Choose your weapon and outsmart your opponent. Stay focused, react quickly, and see if you can win before time runs out!
                                 </p>
 
                                 <!-- Card 3 Call to Action Button -->
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" onclick="window.location.href='rockpaperscissor.html'">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='rockpaperscissor.html'">
                                     Play Now
                                 </button>
 
@@ -201,18 +203,18 @@
                         </article>
 
                         <article id="card1" class="fake">
-                            <div class="h-full w-1/2 relative z-20 p-4">
+                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
 
                                 <!-- Card 1 Title-->
-                                <h3>CLICK TO WIN</h3>
+                                <h3 class="text-2xl">CLICK TO WIN!</h3>
 
                                 <!-- Card 1 Description -->
-                                <p class="max-w-[300px]">
-                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                <p class="max-w-[300px] text-justify text-xl">
+                                    Test your speed and precision in this simple yet addictive clicker game. Tap as fast as you can within a limited time to earn points, challenge your reflexes, and beat your highest score. The faster you click, the higher you climb. How far can you go?
                                 </p>
 
-                                <!-- Card 1Call to Action Button -->
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="window.location.href='clicker.html'">
+                                <!-- Card 1 Call to Action Button -->
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='clicker.html'">
                                     Play Now
                                 </button>
 
@@ -220,18 +222,18 @@
                         </article>
 
                         <article id="card2" class="fake">
-                            <div class="h-full w-1/2 relative z-20 p-4">
+                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
 
                                 <!-- Card 2 Title-->
-                                <h3>GUESS THE NUMBER</h3>
+                                <h3 class="text-2xl">GUESS THE NUMBER!</h3>
 
                                 <!-- Card 2 Description -->
-                                <p class="max-w-[300px]">
-                                    Get ready to have some fun with our latest clicking game. Test your reflexes and see how many points you can score!
+                                <p class="max-w-[300px] text-justify text-xl">
+                                    Test your logic and intuition in this fun and engaging number guessing game. Guess the correct number within a limited time while using hints to guide your choices. Stay sharp, think carefully, and see if you can find the right answer before time runs out!
                                 </p>
 
                                 <!-- Card 2 Call to Action Button -->
-                                <button onclick="window.location.href='numberguess.html'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='numberguess.html'">
                                     Play Now
                                 </button>
 
@@ -248,8 +250,12 @@
         <!-- About Section Start -->
         <section id="about">
             <div class="flex py-20 px-10">
-                <div class="bg-linear-to-b from-indigo-900 to-slate-900 rounded-l-[2rem] p-10">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, at neque quas praesentium harum laborum incidunt dignissimos voluptatibus perferendis, optio voluptate. Harum consequuntur excepturi a maiores aut sapiente eveniet repellendus!</p>
+                <div class="bg-linear-to-b from-indigo-900 to-slate-900 rounded-l-[2rem] p-10 flex flex-col gap-4 justify-evenly items-center">
+                    <h2 class="text-4xl">REVOFUN</h2>
+                    <h3 class="text-2xl text-center">
+                        Provides a collection of casual games that are easy to play and fun to explore. Built for quick sessions and instant enjoyment, it’s the perfect place to unwind and challenge yourself wherever you are.
+                    </h3>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='about.html'">Learn More</button>
                 </div>
 
                 <img src="image/REVOFUN_AboutImage.png" alt="" class="w-[500px] rounded-r-[2rem]">

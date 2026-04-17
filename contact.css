@@ -1,0 +1,48 @@
+.bg-image{
+    background-image: url(image/REVOFUN_AboutImage.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    height: 100svh;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.bg-image::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient( 
+    rgba(49, 46, 129, 0.7) 10%,
+    rgba(2, 6, 23) 100%
+    );
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+.cp-container input,
+.cp-container textarea{
+    width: 100%;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.social-links-list a{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+}
+.social-links-list img{
+    max-width: 30px;
+    transition: transform 0.3s ease;
+}
+.social-links-list img:hover{
+    transform: scale(1.3);
+}

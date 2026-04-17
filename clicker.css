@@ -1,7 +1,7 @@
 #bg-image{
     background-image: url(image/REVOFUN_ButtonContainer1.png);
     background-size: cover;
-    background-position: center;
+    background-position: top;
     height: 100vh;
     position: relative; /* IMPORTANT */
 }
@@ -9,7 +9,7 @@
 #button-img{
     position: absolute;
     width: 600px;
-    top: 250px;
+    top: 300px;
     right: 450px;
     transition: transform 0.5s;
 }
@@ -20,7 +20,7 @@
     position: absolute;
     width: 600px;
     height: 430px;
-    top: 215px;
+    top: 275px;
     right: 450px;
     transition: transform 0.5s;
 }
