@@ -12,7 +12,7 @@ const scoreBox = document.getElementById("score-box");
 let choice = weaponChoice.querySelectorAll("img");
 let resultBox = document.getElementById("result-box");
 let resultTxt = resultBox.querySelector("h3");
-let playAgain = resultBox.querySelector("#restart");
+let restartBtn = resultBox.querySelector("#restart");
 let wonValue = document.querySelector("#won span");
 let lostValue = document.querySelector("#lost span");
 let drawValue = document.querySelector("#draw span");
@@ -48,7 +48,7 @@ startBtn.addEventListener("click", () =>{
 
 // When The User Clicked the Weapon Choices
 for(let i = 0; i < choice.length; i++){
-    choice[i].addEventListener("click", (e)=> {
+    choice[i].addEventListener("click", (e)=> { //for each image add eventListener
 
         // Set the Revealing Hands to Rock
         playerChoice.src = "image/REVOFUN_RockHand.png";
@@ -93,8 +93,9 @@ let showResult =(result) => {
     
     // Show the Result Box
     resultBox.classList.remove("hidden");
-    resultBox.classList.add("activate");
+    resultBox.classList.add("activate"); //for animation
 
+    // Conditional Result
     if(result === "You"){
         resultTxt.innerHTML = `CONGRATULATION, You Won!!`;
         won++;
@@ -110,7 +111,10 @@ let showResult =(result) => {
     }
 }
 
-playAgain.addEventListener("click", () => {
+// When Restart Button Clicked
+restartBtn.addEventListener("click", () => {
+
+    // Reset Game and Animation
     playerChoice.classList.remove("activate");
     computerChoice.classList.remove("activate");
     resultBox.classList.add("hidden");

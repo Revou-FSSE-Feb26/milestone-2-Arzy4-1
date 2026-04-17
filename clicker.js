@@ -19,35 +19,32 @@ let timeLeft = 10;
 let gameActive = false;
 let interval;
 
+// Adding 1 Point
 function incrementScore() {
-    if (!gameActive) return;
-    score.textContent = Number(score.textContent) + 1;
+    if (!gameActive) return; //Add points only when the game runs
+    score.textContent = Number(score.textContent) + 1; //Adding 1 point
 }
 
+// When Button Clicked
 btn.addEventListener("click", () => {
     if (!gameActive) return;
 
-    incrementScore();
+    incrementScore(); //Add points only when the user click the button
 
-    btn.classList.add("active");
+    // Add Animation when button clicked
+    btn.classList.add("active"); 
 
     setTimeout(() => {
     btn.classList.remove("active");
     }, 100);
 });
 
+// When Start Button Clicked
 btnStart.addEventListener("click", () => {
     startSequence();
 });
 
-function resetUI() {
-    btn.style.display = "none";
-    btnStart.style.display = "block";
-    btn1.style.display = "none";
-    btn2.style.display = "none";
-    btn3.style.display = "none";
-}
-
+// Count Down Function & Game Initialization
 function startSequence() {
     clearInterval(interval);
 
@@ -81,6 +78,7 @@ function startSequence() {
     }, 4500);
 }
 
+// Timer Function
 function startTimer() {
     clearInterval(interval);
 
@@ -95,60 +93,63 @@ function startTimer() {
     }, 1000);
 }
 
+// When Game Ends
 function endGame() {
-    gameActive = false;
+    gameActive = false; //Stop The game
 
     btn.style.display = "block"
     btn1.style.display = "none";
     btn2.style.display = "none";
     btn3.style.display = "none";
 
-    timeLeft = 10;
+    timeLeft = 0;
     timerEl.textContent = timeLeft;
 
+    // Show the Scoreboard
     scoreBoard.classList.add("activate");
 
+    // Show the Current Score
     const currentScore = Number(score.textContent);
     finalScore.textContent = currentScore;
 
+    // Save the Current Score to Highscore
     let savedHighScore = Number(localStorage.getItem("highScore")) || 0;
     if (currentScore > savedHighScore) {
         savedHighScore = currentScore;
         localStorage.setItem("highScore", savedHighScore);
     }
 
+    // Show the Highscore
     highScore.textContent = savedHighScore;
 }
 
+// When Click the Restart Button
 restartBtn.addEventListener("click", () => {
+    setTimeout(()=>{
+        
+        // hide scoreboard
+        scoreBoard.classList.remove("activate");
 
-    setTimeout(() => {
-        restartGame();
-    }, 300); // match your CSS transition
+        // reset game state
+        clearInterval(interval);
+        gameActive = false;
+
+        // reset score + timer
+        score.textContent = 0;
+        timeLeft = 10;
+        timerEl.textContent = timeLeft;
+
+        // reset UI
+        btn.style.display = "none";
+        btn1.style.display = "none";
+        btn2.style.display = "none";
+        btn3.style.display = "none";
+
+        // Start again immediately
+        btnStart.style.display = "block";
+        
+    },300);
 });
-
-function restartGame() {
-    // hide scoreboard
-    scoreBoard.classList.remove("activate");
-
-    // reset game state
-    clearInterval(interval);
-    gameActive = false;
-
-    // reset score + timer
-    score.textContent = 0;
-    timeLeft = 10;
-    timerEl.textContent = timeLeft;
-
-    // reset UI
-    btn.style.display = "none";
-    btn1.style.display = "none";
-    btn2.style.display = "none";
-    btn3.style.display = "none";
-
-    // 🔥 start again immediately
-    btnStart.style.display = "block";
-}
 
 // HighScore reset
 // window.addEventListener("load", () => {

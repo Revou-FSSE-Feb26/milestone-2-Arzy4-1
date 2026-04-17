@@ -86,7 +86,7 @@ let autoplay;
 
 function startAutoplay() {
     clearInterval(autoplay);
-    autoplay = setInterval(autoSlide, 8000);
+    autoplay = setInterval(autoSlide, 8000); //Autoslide function runs for 8 seconds
 }
 
 startAutoplay();

@@ -124,37 +124,31 @@ guessBtn.addEventListener("click", () => {
 });
 
 restartBtn.addEventListener("click", () => {
-    scoreBoard.classList.remove("activate");
+    setTimeout(()=> {
 
-    setTimeout(() => {
-        restartGame();
-    }, 300); // match your CSS transition
+        // Reset Game State
+        clearInterval(timer);
+        running = false;
+        seconds = 0;
+        hintText.textContent = "Start guessing...";
+        timeDisplay.textContent = seconds;
+        guessInput.disabled = false;
+        guessBtn.style.pointerEvents = "auto";
+        guessBtn.style.opacity = "1";
+        guessInput.value = "";
+
+        // hide scoreboard
+        scoreBoard.classList.remove("activate");
+
+        // show start button again
+        startBtn.classList.remove("hidden");
+
+        // OPTIONAL: reset game container
+        gameContainer.classList.remove("activate");
+
+        // generate new answer
+        answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+        console.log("New Answer:", answer);
+
+    },300);
 });
-
-function restartGame() {
-    clearInterval(timer);
-    running = false;
-    seconds = 0;
-
-    hintText.textContent = "Start guessing...";
-    timeDisplay.textContent = seconds;
-
-    guessInput.disabled = false;
-    guessBtn.style.pointerEvents = "auto";
-    guessBtn.style.opacity = "1";
-
-    guessInput.value = "";
-
-    // hide scoreboard
-    scoreBoard.classList.remove("activate");
-
-    // show start button again
-    startBtn.classList.remove("hidden");
-
-    // OPTIONAL: reset game container
-    gameContainer.classList.remove("activate");
-
-    // generate new answer
-    answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-    console.log("New Answer:", answer);
-}
