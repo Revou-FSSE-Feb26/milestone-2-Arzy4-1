@@ -1,7 +1,7 @@
 // Number Guessing Game
 const minNum = 1;
 const maxNum = 100;
-const answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+let answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 
 console.log("Answer:", answer);
 
