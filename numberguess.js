@@ -26,13 +26,16 @@ const finalNumber = document.getElementById("final-number");
 const timerEl = document.getElementById("timer");
 const timerPanel = document.getElementById("timer-panel");
 
+// When Start Button Clicked
 startBtn.addEventListener("click", () => {
     startBtn.classList.add("hidden");
 
+    // Count Down Timer
     let count = 3;
     countdownEl.classList.remove("hidden");
     countdownEl.textContent = count;
 
+    // When Count Down is 0
     const countdownInterval = setInterval(() => {
         count--;
         countdownEl.textContent = count;
@@ -43,15 +46,16 @@ startBtn.addEventListener("click", () => {
             countdownEl.classList.add("hidden");
             gameContainer.classList.add("activate");
 
-            running = true;
+            running = true; //Start The Game
             timeDisplay.textContent = seconds;
 
             timer = setInterval(() => {
                 if (!running) return;
 
-                seconds++;
+                seconds++; //Game Timer Start (adding)
                 timeDisplay.textContent = seconds;
 
+                // When The Timer is Up
                 if (seconds >= 30) {
                     clearInterval(timer);
                     running = false;
@@ -60,9 +64,12 @@ startBtn.addEventListener("click", () => {
                     guessBtn.style.opacity = "0.6";
                     scoreBoard.classList.add("activate");
                     finalText.textContent = `Too Bad, Your Final Number Is`;
+
+                    // Showing The Final Answer and Current Time
                     finalNumber.textContent = answer;
                     finalTime.textContent = `-`;
 
+                    // Save the Final Answer and Show the Highscore Time
                     let savedHighScore = Number(localStorage.getItem("highScoreTime")) || 0;
                     highScoreTime.textContent = savedHighScore + `s`;
                 }
@@ -71,20 +78,17 @@ startBtn.addEventListener("click", () => {
     }, 1000);
 });
 
-guessInput.addEventListener("input", () => {
-    guessInput.value = guessInput.value.replace(/[^0-9]/g, "");
-});
-
+// When Guess Button CLicked
 guessBtn.addEventListener("click", () => {
     if (!running) return;
 
     const guess = Number(guessInput.value);
 
+    // When The Input is More Then Max or Min or Not Entered
     if (guessInput.value === "") {
         hintText.textContent = "Please enter a number!";
         return;
     }
-
     if (guess < minNum || guess > maxNum) {
         hintText.textContent = `Enter a number from ${minNum} to ${maxNum}!`;
         return;
@@ -92,6 +96,7 @@ guessBtn.addEventListener("click", () => {
 
     attempts++;
 
+    // When The Guess is Correct
     if (guess == answer) {
         hintText.textContent = `Correct!`;
         running = false;
@@ -102,27 +107,32 @@ guessBtn.addEventListener("click", () => {
         finalText.textContent = `CONGRATULATION!! Your Final Number Is`;
         finalNumber.textContent = answer;
 
+        // Show The Current Time
         const currentScore = seconds;
         finalTime.textContent = currentScore + `s`;
 
+        // Save The Current Time
         let savedHighScore = Number(localStorage.getItem("highScoreTime")) || 0;
 
+        // Rewrite the Current Time as Saved Highscore Time
         if (savedHighScore === 0 || currentScore <= savedHighScore) {
             savedHighScore = currentScore;
             localStorage.setItem("highScoreTime", savedHighScore);
         }
 
+        // Show The Highscore Time
         highScoreTime.textContent = savedHighScore + `s`;
     } else if (Math.abs(guess - answer) <= 10) {
-        hintText.textContent = guess < answer ? "Close! Higher!" : "Close! Lower!";
+        hintText.textContent = guess < answer ? "Close! Higher!" : "Close! Lower!"; //If the guess is 10 number closer to the answer
     } else {
-        hintText.textContent = guess < answer ? "Too Low!!" : "Too High!!";
+        hintText.textContent = guess < answer ? "Too Low!!" : "Too High!!"; //If the guess is too far
     }
 
-    guessInput.value = "";
-    guessInput.focus();
+    guessInput.value = ""; //The input goes empty after user input the number
+    guessInput.focus(); //User can immediately input the number
 });
 
+// When Restart Button Clicked
 restartBtn.addEventListener("click", () => {
     setTimeout(()=> {
 
