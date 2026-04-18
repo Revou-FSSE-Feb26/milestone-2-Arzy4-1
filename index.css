@@ -6,6 +6,13 @@ body{
     font-style: normal;
 }
 
+/* Navbar */
+.navbar.activate{
+    background-color: #1e1b4b;
+    position: fixed;
+    width: 100%;
+}
+
 /* Home Section Styles */
 #home{
     background-image: url(image/REVOFUN_BackgroundImage.png);
