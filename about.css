@@ -25,9 +25,6 @@ body{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    position: relative;
-    height: 100svh;
-    z-index: 10;
 }
 .intro::before{
     content: "";
@@ -104,10 +101,10 @@ body{
 /* Animation keyframes */
 @keyframes carousel{
     0%{
-        translate: 0%;
+        transform: translateX(0%);
     }
     100%{
-        translate: -100%;
+        transform: translateX(-100%);
     }
 }
 @keyframes fadeIn{
@@ -143,12 +140,10 @@ body{
 @keyframes up{
     from{
         opacity: 0;
-        scale: .95;
-        transform: translateY(4rem);
+        transform: translateY(4rem) scale(.95);
     }
     to{
         opacity: 1;
-        scale: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
