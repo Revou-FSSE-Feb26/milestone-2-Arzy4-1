@@ -11,34 +11,53 @@
 </head>
 <body class="bg-slate-950 text-white">
 
+    <!-- Header Start -->
     <header>
 
         <!-- Navbar Start -->
-        <nav id="navbar" class="navbar flex justify-between items-center py-4 px-8 fixed w-full transition duration-500 z-100">
+        <nav id="navbar" class="navbar flex justify-between items-center py-4 px-8 fixed w-full transition-all duration-800 z-100" aria-label="Main Navigation">
 
             <!-- Page Logo -->
-            <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" href="#home" class="w-[150px]">
+            <a href="index.html">
+                <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" class="w-[150px]">
+            </a>
 
             <!-- Page Navigation -->
             <ul class="flex gap-8 text-xl">
+
+                <!-- Home Page -->
                 <li><a href="index.html">Home</a></li>
+
+                <!-- Games Pages -->
                 <li class="relative group">
-                    <a class="cursor-pointer">Games</a>
+                    <button class="cursor-pointer">Games</button>
     
                     <!-- Dropdown Menu -->
                     <ul class="text-center absolute -translate-x-[63px] top-full mt-0 pt-2 w-48 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+
+                        <!-- Clicker Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110 rounded-t-xl">
                             <a href="clicker.html">Click to Win</a>
                         </li>
+
+                        <!-- Number Guessing Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110">
                             <a href="numberguess.html">Guess the Number</a>
                         </li>
+
+                        <!-- Rock Paper Scissor Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110 rounded-b-xl">
                             <a href="rockpaperscissor.html">Rock Paper Scissors</a>
                         </li>
+
                     </ul>
+
                 </li>
+
+                <!-- About Page -->
                 <li><a href="about.html">About</a></li>
+
+                <!-- Contact Page -->
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
@@ -46,62 +65,72 @@
         <!-- Navbar End -->
 
     </header>
+    <!-- Header End -->
 
+    <!-- Main Start -->
     <main class="mb-[400px] relative z-10 bg-slate-950">
 
-        <div class="bg-image">
-            <div class="contact-container relative z-20">
+        <section id="contact" class="contact flex flex-col items-center justify-center gap-4 relative z-20 h-[100vh]">
+            <div class="contact-container relative z-20 flex flex-col gap-10">
 
                 <!-- Contact Title & Tagline -->
                 <div class="contact-title flex flex-col items-center text-center gap-2 px-1 pb-5">
                     <h1 class="text-4xl">LET'S GET IN TOUCH</h1>
-                    <h2 class="text-2xl">I’d be happy to connect and collaborate with you!</h2>
+                    <p class="text-2xl">I’d be happy to connect and collaborate with you!</p>
                 </div>
 
-                <!-- Contact Input Form -->
-                <div class="flex justify-center items-start px-1 gap-10">
-                    <div class="flex flex-col items-center justify-center">
-                        <form action="#" method="post">
-                            <div class="cp-container [&_input]:h-[30px] [&_textarea]:h-[150px] w-[600px]">
+                <div class="flex gap-10">
+                    <!-- Contact Input Form -->
+                    <div class="flex justify-center items-start px-1 gap-10">
+                        <div class="flex flex-col items-center justify-center">
+                            <form action="#" method="post">
+                                <div class="cp-container [&_input]:h-[30px] [&_textarea]:h-[150px] w-[600px]">
 
-                                <!-- Name Input Form -->
-                                <div class="flex mb-1 gap-4">
-                                    <div class="flex flex-col flex-1">
-                                        <label for="firstName">First Name</label>
-                                        <input type="text" id="firstName" name="firstName" placeholder="Enter Your First Name" required>
+                                    <!-- Name Input Form -->
+                                    <div class="flex mb-1 gap-4">
+
+                                        <!-- First Name -->
+                                        <div class="flex flex-col flex-1">
+                                            <label for="firstName">First Name</label>
+                                            <input type="text" id="firstName" name="firstName" placeholder="Enter Your First Name" required>
+                                        </div>
+
+                                        <!-- Last Name -->
+                                        <div class="flex flex-col flex-1">
+                                            <label for="lastName">Last Name</label>
+                                            <input type="text" id="lastName" name="lastName" placeholder="Enter Your Last Name" required>
+                                        </div>
                                     </div>
-                                    <div class="flex flex-col flex-1">
-                                        <label for="lastName">Last Name</label>
-                                        <input type="text" id="lastName" name="lastName" placeholder="Enter Your Last Name" required>
+
+                                    <!-- Email Input Form -->
+                                    <div class="flex flex-col mb-1">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
                                     </div>
-                                </div>
 
-                                <!-- Email Input Form -->
-                                <div class="flex flex-col mb-1">
-                                    <label for="email">Email Address</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
-                                </div>
+                                    <!-- Message Textarea Form -->
+                                    <div class="flex flex-col mb-1">
+                                        <label for="message">Your Message</label>
+                                        <textarea id="message" name="message" placeholder="Enter Your Message" rows="5" required></textarea>
+                                    </div>
 
-                                <!-- Message Textarea Form -->
-                                <div class="flex flex-col mb-1">
-                                    <label for="message">Your Message</label>
-                                    <textarea id="message" name="message" placeholder="Enter Your Message" rows="5" required></textarea>
+                                    <!-- Contact Button -->
+                                    <div class="flex justify-center items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                        <button type="submit" aria-label="send message">Send Message</button>                       
+                                    </div>
+                                    
                                 </div>
-
-                                <!-- Contact Button -->
-                                <div class="cp-btn flex justify-center items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                    <button type="submit" aria-label="send message">Send Message</button>                       
-                                </div>
-                                
-                            </div>
-                        </form>
+                            </form>
+                            
+                        </div>                    
                     </div>
-
 
                     <!-- Contact Information Icon and Social Links  -->
                     <div class="social-links-list">
+                        <h2 class="text-center text-2xl">Contact Information</h2>
                         <ul class="flex flex-col gap-10 pt-5 [&_h3]:text-sm [&_span]:text-xl">
 
+                            <!-- Linkedin -->
                             <li>
                                 <h3>LINKEDIN</h3>
                                 <a href="https://linkedin.com/in/robbyarzy/">
@@ -109,6 +138,7 @@
                                 </a>
                             </li>
 
+                            <!-- Email -->
                             <li>
                                 <h3>EMAIL</h3>
                                 <a href="mailto:robbyarzy@gmail.com">
@@ -116,6 +146,7 @@
                                 </a>
                             </li>
 
+                            <!-- Whatsapp -->
                             <li>
                                 <h3>WHATSAPP</h3>
                                 <a href="https://wa.me/6282232138510">
@@ -125,65 +156,81 @@
 
                         </ul>
                     </div>
-                    
                 </div>
 
             </div>
-        </div>
+        </section>
 
     </main>
+    <!-- Main End -->
 
+    <!-- Footer Start -->
     <footer class="bg-linear-to-b from-indigo-950 to-slate-900 pt-10 pb-20 fixed bottom-0 w-full">
 
+        <!-- Footer Container -->
         <div class="flex flex-col items-center">
+
+            <!-- Page Logo -->
             <img src="image/REVOFUN_Logo.png" alt="REVOFUN Logo" class="w-[200px]">
 
-            <ul id="footer-list" class="flex justify-evenly items-center gap-10">
+            <!-- Footer Icon Links -->
+            <ul class="footer-list flex justify-evenly items-center gap-10">
+
+                <!-- Linkedin -->
                 <li>
-                    <a href="image/Linkedin_Logo.png">
+                    <a href="https://linkedin.com/in/robbyarzy/">
                         <img src="image/Linkedin_Logo.png" alt="LinkedIn Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- Email -->
                 <li>
-                    <a href="image/Gmail_Logo.png">
+                    <a href="mailto:robbyarzy@gmail.com">
                         <img src="image/Gmail_Logo.png" alt="Gmail Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- Whatsapp -->
                 <li>
-                    <a href="image/whatsapp.png">
+                    <a href="https://wa.me/6282232138510">
                         <img src="image/whatsapp.png" alt="WhatsApp Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- Instagram -->
                 <li>
-                    <a href="image/Instagram_Logo.png">
+                    <a href="https://www.instagram.com/rbby_rzy/">
                         <img src="image/Instagram_Logo.png" alt="Instagram Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- Telegram -->
                 <li>
-                    <a href="image/Telegram_Logo.png">
+                    <a href="https://t.me/Robby100903">
                         <img src="image/Telegram_Logo.png" alt="Telegram Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- GitHub -->
                 <li>
-                    <a href="image/Github_Logo.png">
+                    <a href="https://github.com/Revou-FSSE-Feb26/milestone-2-Arzy4-1">
                         <img src="image/Github_Logo.png" alt="GitHub Logo" class="w-[40px]">
                     </a>
                 </li>
+
             </ul>
+
         </div>
 
+        <!-- Update Information and Copyrights -->
         <div class="flex justify-center text-center text-white pt-20">
-            <p>Latest Update: April 10, 2026</p>
+            <p>Latest Update: April 20, 2026</p>
             <p class="px-2">|</p>
             <p>&copy; 2026 REVOFUN. All rights reserved.</p>
         </div>
 
     </footer>
+    <!-- Footer End -->
     
     <script src="contact.js"></script>
 </body>

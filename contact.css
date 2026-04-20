@@ -9,36 +9,21 @@ body{
 /* Navbar */
 .navbar.activate{
     background-color: #1e1b4b;
-    position: fixed;
-    width: 100%;
 }
 
+/* Contact */
 .contact-title{
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
 }
-
-.bg-image{
+.contact{
     background-image: url(image/REVOFUN_AboutImage.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    position: relative;
-    height: 100svh;
-    z-index: 10;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
 }
-.contact-container{
-    opacity: 0;
-    animation: fadeIn 3s ease forwards;
-}
-.bg-image::before{
+.contact::before{
     content: "";
     position: absolute;
     top: 0;
@@ -51,7 +36,10 @@ body{
     width: 100%;
     z-index: 10;
 }
-
+.contact-container{
+    opacity: 0;
+    animation: fadeIn 3s ease forwards;
+}
 .cp-container input,
 .cp-container textarea{
     width: 100%;
@@ -71,6 +59,14 @@ body{
 }
 .social-links-list img:hover{
     transform: scale(1.3);
+}
+
+/* Footer Section Styles   */
+.footer-list img{
+    transition: transform 0.5s;
+}
+.footer-list img:hover{
+    transform: scale(1.4);
 }
 
 /* Animation */
