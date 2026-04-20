@@ -44,14 +44,14 @@ body{
 }
 
 /* Offer */
-.focus h2, .offer img{
+.focus h2, .focus p, .offer img{
     opacity: 0;
     transform: translateX(-100%);
     animation: left forwards;
     animation-timeline: view();
     animation-range: entry 20% cover 50%;
 }
-.focus img, .offer h2{
+.offer h2, .offer p, .focus img{
     opacity: 0;
     transform: translateX(100%);
     animation: right forwards;
@@ -91,6 +91,14 @@ body{
 .skill-container img{
     width: 40px;
     height: 40px;
+}
+
+/* Footer Section Styles   */
+.footer-list img{
+    transition: transform 0.5s;
+}
+.footer-list img:hover{
+    transform: scale(1.4);
 }
 
 /* Animation keyframes */

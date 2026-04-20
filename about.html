@@ -11,34 +11,53 @@
 </head>
 <body class="bg-slate-950 text-white">
 
+    <!-- Header Start -->
     <header>
 
         <!-- Navbar Start -->
-        <nav id="navbar" class="navbar flex justify-between items-center py-4 px-8 fixed w-full transition duration-500 z-100">
+        <nav id="navbar" class="navbar flex justify-between items-center py-4 px-8 fixed w-full transition-all duration-800 z-100" aria-label="Main Navigation">
 
             <!-- Page Logo -->
-            <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" href="#home" class="w-[150px]">
+            <a href="index.html">
+                <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" class="w-[150px]">
+            </a>
 
             <!-- Page Navigation -->
             <ul class="flex gap-8 text-xl">
+
+                <!-- Home Page -->
                 <li><a href="index.html">Home</a></li>
+
+                <!-- Games Pages -->
                 <li class="relative group">
-                    <a class="cursor-pointer">Games</a>
+                    <button class="cursor-pointer">Games</button>
     
                     <!-- Dropdown Menu -->
                     <ul class="text-center absolute -translate-x-[63px] top-full mt-0 pt-2 w-48 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+
+                        <!-- Clicker Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110 rounded-t-xl">
                             <a href="clicker.html">Click to Win</a>
                         </li>
+
+                        <!-- Number Guessing Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110">
                             <a href="numberguess.html">Guess the Number</a>
                         </li>
+
+                        <!-- Rock Paper Scissor Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110 rounded-b-xl">
                             <a href="rockpaperscissor.html">Rock Paper Scissors</a>
                         </li>
+
                     </ul>
+
                 </li>
+
+                <!-- About Page -->
                 <li><a href="about.html">About</a></li>
+
+                <!-- Contact Page -->
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
@@ -46,149 +65,208 @@
         <!-- Navbar End -->
 
     </header>
+    <!-- Header End -->
 
+    <!-- Main Start -->
     <main class="mb-[400px] relative z-10 bg-slate-950">
 
         <!-- About Intro Section Start -->
-        <section class="intro flex justify-center items-center">
+        <section id="intro" class="intro flex justify-center items-center">
+
+            <!-- About Page Title -->
             <h1 class="text-center relative z-20 max-w-[1200px] text-4xl">
                 <strong>REVOFUN</strong> is a platform that offers simple yet entertaining games designed to deliver quick and enjoyable experiences. Whether you have a few minutes or just want to relax, REVOFUN makes it easy to have fun anytime, anywhere.
             </h1>
+
         </section>
         <!-- About Intro Section End -->
 
         <!-- About Content Section Start  -->
 
-            <!-- Platform's Focus Start -->
-            <section class="focus flex py-20 justify-center items-center gap-4">
-                <h2 class="max-w-[700px] text-2xl text-justify">
+        <!-- Platform's Focus Start -->
+        <section id="focus" class="focus flex py-20 justify-center items-center gap-4">
+
+            <!-- Focus Description -->
+            <div class="flex flex-col gap-6">
+                <h2 class="text-4xl text-center">Vision</h2>
+                <p class="max-w-[700px] text-2xl text-justify">
                     REVOFUN focuses on delivering simple and engaging casual games that challenge players’ reflexes, logic, and decision-making through quick and interactive gameplay
-                </h2>
-                <img src="image/REVOFUN_AboutFocus.png" alt="" class="max-w-[400px]">
-            </section>
-            <!-- Platform's Focus End -->
+                </p>
+            </div>
 
-            <!-- Platform's Offering Start -->
-            <Section class="offer flex py-20 justify-center items-center gap-4">
-                <img src="image/REVOFUN_AboutOffer.png" alt="" class="max-w-[500px]">
-                <h2 class="max-w-[700px] text-2xl text-justify">
+            <!-- Focus Image -->
+            <figure>
+                <img src="image/REVOFUN_AboutFocus.png" alt="Focus Section Image" class="max-w-[400px]">
+            </figure>
+
+        </section>
+        <!-- Platform's Focus End -->
+
+        <!-- Platform's Offering Start -->
+        <section id="offer" class="offer flex py-20 justify-center items-center gap-4">
+
+            <!-- Offer Image -->
+            <figure>
+                <img src="image/REVOFUN_AboutOffer.png" alt="Offer Section Image" class="max-w-[500px]">
+            </figure>
+
+            <!-- Offer Description  -->
+            <div class="flex flex-col gap-6">
+                <h2 class="text-4xl text-center">What We Offer</h2>
+                <p class="max-w-[700px] text-2xl text-justify">
                     REVOFUN provides a collection of simple and engaging games designed for quick and enjoyable play. From fast-paced clicker challenges to logic-based number guessing and classic rock paper scissors, each game offers a unique experience that tests reflexes, thinking, and decision-making. With a focus on simplicity, speed, and accessibility, REVOFUN makes it easy for anyone to jump in and enjoy fun, interactive gameplay anytime and anywhere.
-                </h2>
-            </Section>
-            <!-- Platform's Offering End -->
+                </p>
+            </div>
 
-            <!-- Game Developers Start -->
-            <section class="px-30 pt-30 pb-50">
-                <h2 class="up text-center p-10 text-4xl">GAME DEVELOPER</h2>
-                <div class="flex justify-center">
-                    <div class="flex flex-col justify-start-end items-center gap-5">
-                        <div>
-                            <img src="image/Profile_Picture1.jpg" alt="" class="up h-[450px] rounded-2xl">
-                        </div>
-                        <div class="flex flex-col gap-10">
-                            <h3 class="up max-w-[1000px] text-justify text-lg">
-                                I am a Future Software Engineer with a strong passion for programming and technology. Although my academic background is rooted in engineering, I have always been drawn to the logic, creativity, and problem-solving aspects of software development. Determined to pursue my goal of becoming a software engineer, I continuously dedicate my time to learning through independent study and various online courses. As a beginner programmer, I focus on building a solid foundation, improving my skills step by step, and growing through every project and challenge I take on. I truly appreciate any support, guidance, or opportunities to learn and collaborate, and if you would like to connect, feel free to reach out through the contact section—I would be glad to hear from you.
-                            </h3>
-                            <div class="text-center flex flex-col gap-4">
-                                <h3 class="up text-2xl">Skills</h3>
-                                <div class="skill-wrapper">
-                                    <ul class="skill-container">
-                                        <li>
-                                            <img src="image/HTML_Logo.png" alt="">
-                                        </li>
-                                        <li>
-                                            <img src="image/CSS_Logo.png" alt="">
-                                        </li>
-                                        <li>
-                                            <img src="image/Javascript_Logo.png" alt="">
-                                        </li>
-                                        <li>
-                                            <img src="image/Figma_Logo.png" alt="">
-                                        </li>
-                                        <li>
-                                            <img src="image/VSCODE_Logo.png" alt="">
-                                        </li>
-                                    </ul>
-                                    <ul class="skill-container" aria-hidden="true">
-                                        <li>
-                                            <img src="image/HTML_Logo.png" alt="">
-                                        </li>
-                                        <li>
-                                            <img src="image/CSS_Logo.png" alt="">
-                                        </li>
-                                        <li>
-                                            <img src="image/Javascript_Logo.png" alt="">
-                                        </li>
-                                        <li>
-                                            <img src="image/Figma_Logo.png" alt="">
-                                        </li>
-                                        <li>
-                                            <img src="image/VSCODE_Logo.png" alt="">
-                                        </li>
-                                    </ul>
-                                </div>
+        </section>
+        <!-- Platform's Offering End -->
+
+        <!-- Game Developer Start -->
+        <section id="game-dev" class="px-30 pt-30 pb-50">
+
+            <!-- Game Developer Title -->
+            <h2 class="up text-center p-10 text-4xl">GAME DEVELOPER</h2>
+
+            <div class="flex justify-center">
+                <div class="flex flex-col justify-start-end items-center gap-5">
+
+                    <!-- Game Developer Image -->
+                    <figure>
+                        <img src="image/Profile_Picture1.jpg" alt="Profile Picture" class="up h-[450px] rounded-2xl">
+                    </figure>
+                    
+                    <div class="flex flex-col gap-10">
+
+                        <!-- Game Developer Description -->
+                        <p class="up max-w-[1000px] text-justify text-lg">
+                            I am a Future Software Engineer with a strong passion for programming and technology. Although my academic background is rooted in engineering, I have always been drawn to the logic, creativity, and problem-solving aspects of software development. Determined to pursue my goal of becoming a software engineer, I continuously dedicate my time to learning through independent study and various online courses. As a beginner programmer, I focus on building a solid foundation, improving my skills step by step, and growing through every project and challenge I take on. I truly appreciate any support, guidance, or opportunities to learn and collaborate, and if you would like to connect, feel free to reach out through the contact section—I would be glad to hear from you.
+                        </p>
+                        <div class="text-center flex flex-col gap-4">
+
+                            <!-- Skill Title -->
+                            <h3 class="up text-2xl">Skills</h3>
+
+                            <!-- Skill Icon and Links -->
+                            <div class="skill-wrapper">
+                                <ul class="skill-container">
+                                    <li>
+                                        <img src="image/HTML_Logo.png" alt="HTML Icon">
+                                    </li>
+                                    <li>
+                                        <img src="image/CSS_Logo.png" alt="CSS Icon">
+                                    </li>
+                                    <li>
+                                        <img src="image/Javascript_Logo.png" alt="Javascript Icon">
+                                    </li>
+                                    <li>
+                                        <img src="image/Figma_Logo.png" alt="Figma Icon">
+                                    </li>
+                                    <li>
+                                        <img src="image/VSCODE_Logo.png" alt="VS Code Icon">
+                                    </li>
+                                </ul>
+
+                                <!-- Fake Icon List -->
+                                <ul class="skill-container" aria-hidden="true">
+                                    <li>
+                                        <img src="image/HTML_Logo.png" alt="HTML Icon">
+                                    </li>
+                                    <li>
+                                        <img src="image/CSS_Logo.png" alt="CSS Icon">
+                                    </li>
+                                    <li>
+                                        <img src="image/Javascript_Logo.png" alt="Javascript Icon">
+                                    </li>
+                                    <li>
+                                        <img src="image/Figma_Logo.png" alt="Figma Icon">
+                                    </li>
+                                    <li>
+                                        <img src="image/VSCODE_Logo.png" alt="VS Code Icon">
+                                    </li>
+                                </ul>
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
-            </section>
-            <!-- Game Developers End -->
+            </div>
+        </section>
+        <!-- Game Developer End -->
 
         <!-- About Content Section End -->
 
     </main>
+    <!-- Main End -->
 
+    <!-- Footer Start -->
     <footer class="bg-linear-to-b from-indigo-950 to-slate-900 pt-10 pb-20 fixed bottom-0 w-full">
 
+        <!-- Footer Container -->
         <div class="flex flex-col items-center">
+
+            <!-- Page Logo -->
             <img src="image/REVOFUN_Logo.png" alt="REVOFUN Logo" class="w-[200px]">
 
-            <ul id="footer-list" class="flex justify-evenly items-center gap-10">
+            <!-- Footer Icon Links -->
+            <ul class="footer-list flex justify-evenly items-center gap-10">
+
+                <!-- Linkedin -->
                 <li>
-                    <a href="image/Linkedin_Logo.png">
+                    <a href="https://linkedin.com/in/robbyarzy/">
                         <img src="image/Linkedin_Logo.png" alt="LinkedIn Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- Email -->
                 <li>
-                    <a href="image/Gmail_Logo.png">
+                    <a href="mailto:robbyarzy@gmail.com">
                         <img src="image/Gmail_Logo.png" alt="Gmail Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- Whatsapp -->
                 <li>
-                    <a href="image/whatsapp.png">
+                    <a href="https://wa.me/6282232138510">
                         <img src="image/whatsapp.png" alt="WhatsApp Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- Instagram -->
                 <li>
-                    <a href="image/Instagram_Logo.png">
+                    <a href="https://www.instagram.com/rbby_rzy/">
                         <img src="image/Instagram_Logo.png" alt="Instagram Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- Telegram -->
                 <li>
-                    <a href="image/Telegram_Logo.png">
+                    <a href="https://t.me/Robby100903">
                         <img src="image/Telegram_Logo.png" alt="Telegram Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- GitHub -->
                 <li>
-                    <a href="image/Github_Logo.png">
+                    <a href="https://github.com/Revou-FSSE-Feb26/milestone-2-Arzy4-1">
                         <img src="image/Github_Logo.png" alt="GitHub Logo" class="w-[40px]">
                     </a>
                 </li>
+
             </ul>
+
         </div>
 
+        <!-- Update Information and Copyrights -->
         <div class="flex justify-center text-center text-white pt-20">
-            <p>Latest Update: April 10, 2026</p>
+            <p>Latest Update: April 20, 2026</p>
             <p class="px-2">|</p>
             <p>&copy; 2026 REVOFUN. All rights reserved.</p>
         </div>
 
     </footer>
+    <!-- Footer End -->
     
     <script src="about.js"></script>
 </body>
