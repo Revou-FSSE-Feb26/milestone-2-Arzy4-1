@@ -13,13 +13,14 @@ body{
     width: 100%;
 }
 
-#intro h1{
+.intro h1{
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
+    animation: fadeIn 3s ease forwards;
 }
 
-#intro{
+.intro{
     background-image: url(image/REVOFUN_AboutImage.png);
     background-size: cover;
     background-position: center;
@@ -28,7 +29,7 @@ body{
     height: 100svh;
     z-index: 10;
 }
-#intro::before{
+.intro::before{
     content: "";
     position: absolute;
     top: 0;
@@ -40,6 +41,26 @@ body{
     height: 100%;
     width: 100%;
     z-index: 10;
+}
+
+/* Offer */
+.focus h2, .offer img{
+    transform: translateX(-100%);
+    animation: left forwards;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%;
+}
+.focus img, .offer h2{
+    transform: translateX(100%);
+    animation: right forwards;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%;
+}
+
+.up, .skill-wrapper{
+    opacity: 0;
+    animation: up forwards;
+    animation-timeline: view(40% 20%);
 }
 
 .skill-wrapper{
@@ -69,11 +90,52 @@ body{
     height: 40px;
 }
 
+/* Animation keyframes */
 @keyframes carousel{
     0%{
         translate: 0%;
     }
     100%{
         translate: -100%;
+    }
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    to{
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+@keyframes left{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@Keyframes right{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes up{
+    from{
+        filter: saturate(0) contrast(4) brightness(.1) blur(5px);
+        opacity: 0;
+        scale: .95;
+        transform: translateY(4rem);
+    }
+    to{
+        filter: none;
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0);
     }
 }
