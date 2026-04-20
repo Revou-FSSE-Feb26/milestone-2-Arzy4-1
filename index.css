@@ -13,6 +13,11 @@ body{
     width: 100%;
 }
 
+.home h1, .home h2{
+    opacity: 0;
+    animation: fadeIn 3s ease forwards
+}
+
 /* Home Section Styles */
 #home{
     background-image: url(image/REVOFUN_BackgroundImage.png);
@@ -43,7 +48,7 @@ body{
 }
 
 /* Games Section Styles */
-#clicking{
+.clicking{
     background-image: url(image/REVOFUN_Clicking.png);
     background-size: cover;
     background-position: center;
@@ -52,8 +57,28 @@ body{
     z-index: 10;
     box-shadow: 0 0 40px rgba(49, 46, 129, 0.9);
     border-radius: 2rem;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: left forwards;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
 }
-#games-wrapper{
+.clicking-container{
+    opacity: 0;
+    transform: translateX(100%);
+    animation: right forwards;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+}
+.games h2{
+    opacity: 0;
+    animation: up forwards;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+}
+.games-wrapper{
+    opacity: 0;
+    transform: translateY(4rem);
     margin: auto;
     width: 100%;
     overflow: hidden;
@@ -62,37 +87,40 @@ body{
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     scroll-marker-group: after;
+    animation: up forwards;
+    animation-timeline: view();
+    animation-range: entry 30% cover 50%;
 }
-#games-wrapper::scroll-marker-group{
+.games-wrapper::scroll-marker-group{
     display: flex;
     justify-content: center;
     gap: .5em;
 }
-#games-wrapper::-webkit-scrollbar{
+.games-wrapper::-webkit-scrollbar{
     display: none;
 }
-#games-container{
+.games-container{
     display: flex;
     margin: 2rem;
     gap: 5rem;
 }
-#games-container article{
+.games-container article{
     flex: 0 0 900px;
     scroll-snap-align: center;
     box-shadow: 0px 0px 30px rgba(99, 102, 241, 0.9);
 }
-#games-container article::scroll-marker{
+.games-container article::scroll-marker{
     content: '';
     height: .8em;
     width: .8em;
     background-color: gray;
-    margin-top: 2em;
-    border-radius: 50%;;
+    margin-top: 1.5em;
+    border-radius: 50%;
 }
 .fake::scroll-marker{
     display: none;
 }
-#games-container article::scroll-marker:target-current{
+.games-container article::scroll-marker:target-current{
     background-color: #4338ca;
 }
 #card1{
@@ -134,10 +162,60 @@ body{
     border-bottom-left-radius: 2rem;
 }
 
+/* About */
+.about{
+    opacity: 0;
+    animation: fadeIn forwards;
+    animation-timeline: view();
+    animation-range: entry 30% cover 50%;
+}
+
 /* Footer Section Styles   */
 #footer-list img{
     transition: transform 0.5s;
 }
 #footer-list img:hover{
     transform: scale(1.4);
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    to{
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+@keyframes left{
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes right{
+    from{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes up{
+    from{
+        opacity: 0;
+        transform: translateY(4rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
