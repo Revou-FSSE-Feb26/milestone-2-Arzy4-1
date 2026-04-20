@@ -60,7 +60,8 @@ body{
 .up, .skill-wrapper{
     opacity: 0;
     animation: up forwards;
-    animation-timeline: view(40% 20%);
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
 }
 
 .skill-wrapper{
@@ -117,7 +118,7 @@ body{
         transform: translateX(0);
     }
 }
-@Keyframes right{
+@keyframes right{
     from{
         transform: translateX(100%);
     }
