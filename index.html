@@ -11,34 +11,53 @@
 </head>
 <body class="bg-slate-950 text-white">
 
+    <!-- Header Start -->
     <header>
 
         <!-- Navbar Start -->
-        <nav id="navbar" class="navbar flex justify-between items-center py-4 px-8 fixed w-full z-100">
+        <nav id="navbar" class="navbar flex justify-between items-center py-4 px-8 fixed w-full transition-all duration-800 z-100" aria-label="Main Navigation">
 
             <!-- Page Logo -->
-            <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" href="#home" class="w-[150px]">
+            <a href="index.html">
+                <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" class="w-[150px]">
+            </a>
 
             <!-- Page Navigation -->
             <ul class="flex gap-8 text-xl">
+
+                <!-- Home Page -->
                 <li><a href="index.html">Home</a></li>
+
+                <!-- Games Pages -->
                 <li class="relative group">
-                    <a class="cursor-pointer">Games</a>
+                    <button class="cursor-pointer">Games</button>
     
                     <!-- Dropdown Menu -->
                     <ul class="text-center absolute -translate-x-[63px] top-full mt-0 pt-2 w-48 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+
+                        <!-- Clicker Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110 rounded-t-xl">
                             <a href="clicker.html">Click to Win</a>
                         </li>
+
+                        <!-- Number Guessing Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110">
                             <a href="numberguess.html">Guess the Number</a>
                         </li>
+
+                        <!-- Rock Paper Scissor Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110 rounded-b-xl">
                             <a href="rockpaperscissor.html">Rock Paper Scissors</a>
                         </li>
+
                     </ul>
+
                 </li>
+
+                <!-- About Page -->
                 <li><a href="about.html">About</a></li>
+
+                <!-- Contact Page -->
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
@@ -46,11 +65,13 @@
         <!-- Navbar End -->
 
     </header>
+    <!-- Header End -->
 
+    <!-- Main Start -->
     <main class="mb-[400px] relative z-10 bg-slate-950">
 
         <!-- Home Section Start -->
-        <section id="home" class="home">
+        <section id="home" class="home relative h-[100vh] z-20">
 
             <!-- Hero Title & Tagline -->
             <div class="flex flex-col items-center justify-end h-[100vh] relative z-20 gap-8 py-20">
@@ -63,20 +84,22 @@
                     REVOFUN brings simple games with endless fun, delivering quick and engaging experiences that you can enjoy anytime and anywhere
                 </h2>
 
+            </div>
+
         </section>
         <!-- Home Section End -->
 
-        <!-- Games Section Start -->
-        <section id="games">
+        <!-- Featured Game Section Start -->
+        <section id="featured-game">
 
             <!-- Latest Games -->
-            <div class="flex justify-center items-center gap-10 p-10">
+            <article class="flex justify-center items-center gap-10 p-10">
 
                 <!-- Latest Game Image -->
-                <div class="clicking"></div>
+                <img src="image/REVOFUN_Clicking.png" alt="Latest Game Screenshot" class="clicker h-[350px] w-[500px] rounded-[2rem] shadow-[0_0_40px_rgba(49,46,129,0.9)]">
 
                 <!-- Latest Game Tagline, Description, Call to Action Button -->
-                <div class="clicking-container flex flex-col gap-6">
+                <div class="clicker-container flex flex-col gap-6">
 
                     <!-- Latest Game Tagline-->
                     <h3 class="text-2xl">Let's Play <strong>Click to Win!</strong></h3>
@@ -92,234 +115,263 @@
 
                 </div>
 
+            </article>
+
+        </section>
+        <!-- Featured Game Section End -->
+
+        <!-- Games Section Start -->
+        <section id="games" class="games py-20">
+            <h2 class="text-center text-4xl pb-10">GAMES</h2>
+
+            <div id="games-wrapper" class="games-wrapper">
+                <div id="games-container" class="games-container">
+                    <article class="card2 fake">
+                        <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
+
+                            <!-- Fake Card 2 Title-->
+                            <h3 class="text-2xl">GUESS THE NUMBER!</h3>
+
+                            <!-- Fake Card 2 Description -->
+                            <p class="max-w-[300px] text-justify text-xl">
+                                Test your logic and intuition in this fun and engaging number guessing game. Guess the correct number within a limited time while using hints to guide your choices. Stay sharp, think carefully, and see if you can find the right answer before time runs out!
+                            </p>
+
+                            <!-- Fake Card 2 Call to Action Button -->
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='numberguess.html'">
+                                Play Now
+                            </button>
+
+                        </div>
+                    </article>
+
+                    <article class="card3 fake">
+                        <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
+
+                            <!-- Card 3 Title-->
+                            <h3 class="text-2xl">ROCK PAPER SCISSORS</h3>
+
+                            <!-- Card 3 Description -->
+                            <p class="max-w-[300px] text-justify text-xl">
+                                Test your instincts and decision-making in this classic yet exciting game. Choose your weapon and outsmart your opponent. Stay focused, react quickly, and see if you can win before time runs out!
+                            </p>
+
+                            <!-- Card 3 Call to Action Button -->
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='rockpaperscissor.html'">
+                                Play Now
+                            </button>
+
+                        </div>
+                    </article>
+                    
+                    <article class="card1">
+                        <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
+
+                            <!-- Card 1 Title-->
+                            <h3 class="text-2xl">CLICK TO WIN!</h3>
+
+                            <!-- Card 1 Description -->
+                            <p class="max-w-[300px] text-justify text-xl">
+                                Test your speed and precision in this simple yet addictive clicker game. Tap as fast as you can within a limited time to earn points, challenge your reflexes, and beat your highest score. The faster you click, the higher you climb. How far can you go?
+                            </p>
+
+                            <!-- Card 1 Call to Action Button -->
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='clicker.html'">
+                                Play Now
+                            </button>
+
+                        </div>
+                    </article>
+
+                    <article class="card2">
+                        <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
+
+                            <!-- Card 2 Title-->
+                            <h3 class="text-2xl">GUESS THE NUMBER!</h3>
+
+                            <!-- Card 2 Description -->
+                            <p class="max-w-[300px] text-justify text-xl">
+                                Test your logic and intuition in this fun and engaging number guessing game. Guess the correct number within a limited time while using hints to guide your choices. Stay sharp, think carefully, and see if you can find the right answer before time runs out!
+                            </p>
+
+                            <!-- Card 2 Call to Action Button -->
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='numberguess.html'">
+                                Play Now
+                            </button>
+
+                        </div>
+                    </article>
+
+                    <article class="card3">
+                        <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
+
+                            <!-- Card 3 Title-->
+                            <h3 class="text-2xl">ROCK PAPER SCISSORS</h3>
+
+                            <!-- Card 3 Description -->
+                            <p class="max-w-[300px] text-justify text-xl">
+                                Test your instincts and decision-making in this classic yet exciting game. Choose your weapon and outsmart your opponent. Stay focused, react quickly, and see if you can win before time runs out!
+                            </p>
+
+                            <!-- Card 3 Call to Action Button -->
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='rockpaperscissor.html'">
+                                Play Now
+                            </button>
+
+                        </div>
+                    </article>
+
+                    <article class="card1 fake">
+                        <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
+
+                            <!-- Card 1 Title-->
+                            <h3 class="text-2xl">CLICK TO WIN!</h3>
+
+                            <!-- Card 1 Description -->
+                            <p class="max-w-[300px] text-justify text-xl">
+                                Test your speed and precision in this simple yet addictive clicker game. Tap as fast as you can within a limited time to earn points, challenge your reflexes, and beat your highest score. The faster you click, the higher you climb. How far can you go?
+                            </p>
+
+                            <!-- Card 1 Call to Action Button -->
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='clicker.html'">
+                                Play Now
+                            </button>
+
+                        </div>
+                    </article>
+
+                    <article class="card2 fake">
+                        <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
+
+                            <!-- Card 2 Title-->
+                            <h3 class="text-2xl">GUESS THE NUMBER!</h3>
+
+                            <!-- Card 2 Description -->
+                            <p class="max-w-[300px] text-justify text-xl">
+                                Test your logic and intuition in this fun and engaging number guessing game. Guess the correct number within a limited time while using hints to guide your choices. Stay sharp, think carefully, and see if you can find the right answer before time runs out!
+                            </p>
+
+                            <!-- Card 2 Call to Action Button -->
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='numberguess.html'">
+                                Play Now
+                            </button>
+
+                        </div>
+                    </article>
+
+                </div>
             </div>
 
-            <!-- Games -->
-            <div class="games py-20">
-                <h2 class="text-center text-4xl pb-10">GAMES</h2>
-
-                <div id="games-wrapper" class="games-wrapper">
-                    <div id="games-container" class="games-container">
-                        <article id="card2" class="fake">
-                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
-
-                                <!-- Card 2 Title-->
-                                <h3 class="text-2xl">GUESS THE NUMBER!</h3>
-
-                                <!-- Card 2 Description -->
-                                <p class="max-w-[300px] text-justify text-xl">
-                                    Test your logic and intuition in this fun and engaging number guessing game. Guess the correct number within a limited time while using hints to guide your choices. Stay sharp, think carefully, and see if you can find the right answer before time runs out!
-                                </p>
-
-                                <!-- Card 2 Call to Action Button -->
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='numberguess.html'">
-                                    Play Now
-                                </button>
-
-                            </div>
-                        </article>
-
-                        <article id="card3" class="fake">
-                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
-
-                                <!-- Card 3 Title-->
-                                <h3 class="text-2xl">ROCK PAPER SCISSORS</h3>
-
-                                <!-- Card 3 Description -->
-                                <p class="max-w-[300px] text-justify text-xl">
-                                    Test your instincts and decision-making in this classic yet exciting game. Choose your weapon and outsmart your opponent. Stay focused, react quickly, and see if you can win before time runs out!
-                                </p>
-
-                                <!-- Card 3 Call to Action Button -->
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='rockpaperscissor.html'">
-                                    Play Now
-                                </button>
-
-                            </div>
-                        </article>
-                        
-                        <article id="card1">
-                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
-
-                                <!-- Card 1 Title-->
-                                <h3 class="text-2xl">CLICK TO WIN!</h3>
-
-                                <!-- Card 1 Description -->
-                                <p class="max-w-[300px] text-justify text-xl">
-                                    Test your speed and precision in this simple yet addictive clicker game. Tap as fast as you can within a limited time to earn points, challenge your reflexes, and beat your highest score. The faster you click, the higher you climb. How far can you go?
-                                </p>
-
-                                <!-- Card 1 Call to Action Button -->
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='clicker.html'">
-                                    Play Now
-                                </button>
-
-                            </div>
-                        </article>
-
-                        <article id="card2">
-                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
-
-                                <!-- Card 2 Title-->
-                                <h3 class="text-2xl">GUESS THE NUMBER!</h3>
-
-                                <!-- Card 2 Description -->
-                                <p class="max-w-[300px] text-justify text-xl">
-                                    Test your logic and intuition in this fun and engaging number guessing game. Guess the correct number within a limited time while using hints to guide your choices. Stay sharp, think carefully, and see if you can find the right answer before time runs out!
-                                </p>
-
-                                <!-- Card 2 Call to Action Button -->
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='numberguess.html'">
-                                    Play Now
-                                </button>
-
-                            </div>
-                        </article>
-
-                        <article id="card3">
-                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
-
-                                <!-- Card 3 Title-->
-                                <h3 class="text-2xl">ROCK PAPER SCISSORS</h3>
-
-                                <!-- Card 3 Description -->
-                                <p class="max-w-[300px] text-justify text-xl">
-                                    Test your instincts and decision-making in this classic yet exciting game. Choose your weapon and outsmart your opponent. Stay focused, react quickly, and see if you can win before time runs out!
-                                </p>
-
-                                <!-- Card 3 Call to Action Button -->
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='rockpaperscissor.html'">
-                                    Play Now
-                                </button>
-
-                            </div>
-                        </article>
-
-                        <article id="card1" class="fake">
-                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
-
-                                <!-- Card 1 Title-->
-                                <h3 class="text-2xl">CLICK TO WIN!</h3>
-
-                                <!-- Card 1 Description -->
-                                <p class="max-w-[300px] text-justify text-xl">
-                                    Test your speed and precision in this simple yet addictive clicker game. Tap as fast as you can within a limited time to earn points, challenge your reflexes, and beat your highest score. The faster you click, the higher you climb. How far can you go?
-                                </p>
-
-                                <!-- Card 1 Call to Action Button -->
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='clicker.html'">
-                                    Play Now
-                                </button>
-
-                            </div>
-                        </article>
-
-                        <article id="card2" class="fake">
-                            <div class="h-full w-1/2 relative z-20 p-4 flex flex-col justify-between">
-
-                                <!-- Card 2 Title-->
-                                <h3 class="text-2xl">GUESS THE NUMBER!</h3>
-
-                                <!-- Card 2 Description -->
-                                <p class="max-w-[300px] text-justify text-xl">
-                                    Test your logic and intuition in this fun and engaging number guessing game. Guess the correct number within a limited time while using hints to guide your choices. Stay sharp, think carefully, and see if you can find the right answer before time runs out!
-                                </p>
-
-                                <!-- Card 2 Call to Action Button -->
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='numberguess.html'">
-                                    Play Now
-                                </button>
-
-                            </div>
-                        </article>
-
-                    </div>
+            <!-- Slide Button -->
+            <div class="slide-button">
+                <div>
+                    <button id="prev-btn" class="absolute top-[77%] left-[40%] z-50 h-[60px] w-[60px] rounded-[50%] text-[2rem] bg-indigo-700 text-white border-none cursor-pointer pb-[.1em] font-black">←</button>
                 </div>
-
-                <!-- Slide Button -->
-                <div class="slide-button">
-                    <div>
-                        <button id="prev-btn" class="absolute top-[77%] left-[40%] z-50 h-[60px] w-[60px] rounded-[50%] text-[2rem] bg-indigo-700 text-white border-none cursor-pointer pb-[.1em] font-black">←</button>
-                    </div>
-                    <div>
-                        <button id="next-btn" class="absolute top-[77%] right-[40%] z-50 h-[60px] w-[60px] rounded-[50%] text-[2rem] bg-indigo-700 text-white border-none cursor-pointer pb-[.1em] font-black">→</button>
-                    </div>
+                <div>
+                    <button id="next-btn" class="absolute top-[77%] right-[40%] z-50 h-[60px] w-[60px] rounded-[50%] text-[2rem] bg-indigo-700 text-white border-none cursor-pointer pb-[.1em] font-black">→</button>
                 </div>
-
             </div>
 
         </section>
         <!-- Games Section End -->
 
         <!-- About Section Start -->
-        <section class="about">
+        <section id="about" class="about">
+
+            <!-- About Container -->
             <div class="flex py-20 px-10">
                 <div class="bg-linear-to-b from-indigo-900 to-slate-900 rounded-l-[2rem] p-10 flex flex-col gap-4 justify-evenly items-center">
+
+                    <!-- About Title -->
                     <h2 class="text-4xl">REVOFUN</h2>
-                    <h3 class="text-2xl text-center">
+
+                    <!-- About Description -->
+                    <p class="text-2xl text-center">
                         Provides a collection of casual games that are easy to play and fun to explore. Built for quick sessions and instant enjoyment, it’s the perfect place to unwind and challenge yourself wherever you are.
-                    </h3>
+                    </p>
+
+                    <!-- About Button -->
                     <button class="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded cursor-pointer max-w-[300px]" onclick="window.location.href='about.html'">Learn More</button>
+
                 </div>
 
-                <img src="image/REVOFUN_AboutImage.png" alt="" class="w-[500px] rounded-r-[2rem]">
+                <!-- About Image -->
+                <img src="image/REVOFUN_AboutImage.png" alt="About Page Image" class="w-[500px] rounded-r-[2rem]">
+
             </div>
         </section>
         <!-- About Section End -->
 
     </main>
+    <!-- Main End -->
 
+    <!-- Footer Start -->
     <footer class="bg-linear-to-b from-indigo-950 to-slate-900 pt-10 pb-20 fixed bottom-0 w-full">
 
+        <!-- Footer Container -->
         <div class="flex flex-col items-center">
+
+            <!-- Page Logo -->
             <img src="image/REVOFUN_Logo.png" alt="REVOFUN Logo" class="w-[200px]">
 
-            <ul id="footer-list" class="flex justify-evenly items-center gap-10">
+            <!-- Footer Icon Links -->
+            <ul class="footer-list flex justify-evenly items-center gap-10">
+
+                <!-- Linkedin -->
                 <li>
-                    <a href="image/Linkedin_Logo.png">
+                    <a href="https://linkedin.com/in/robbyarzy/">
                         <img src="image/Linkedin_Logo.png" alt="LinkedIn Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- Email -->
                 <li>
-                    <a href="image/Gmail_Logo.png">
+                    <a href="mailto:robbyarzy@gmail.com">
                         <img src="image/Gmail_Logo.png" alt="Gmail Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- Whatsapp -->
                 <li>
-                    <a href="image/whatsapp.png">
+                    <a href="https://wa.me/6282232138510">
                         <img src="image/whatsapp.png" alt="WhatsApp Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- Instagram -->
                 <li>
-                    <a href="image/Instagram_Logo.png">
+                    <a href="https://www.instagram.com/rbby_rzy/">
                         <img src="image/Instagram_Logo.png" alt="Instagram Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- Telegram -->
                 <li>
-                    <a href="image/Telegram_Logo.png">
+                    <a href="https://t.me/Robby100903">
                         <img src="image/Telegram_Logo.png" alt="Telegram Logo" class="w-[40px]">
                     </a>
                 </li>
 
+                <!-- GitHub -->
                 <li>
-                    <a href="image/Github_Logo.png">
+                    <a href="https://github.com/Revou-FSSE-Feb26/milestone-2-Arzy4-1">
                         <img src="image/Github_Logo.png" alt="GitHub Logo" class="w-[40px]">
                     </a>
                 </li>
+
             </ul>
+
         </div>
 
+        <!-- Update Information and Copyrights -->
         <div class="flex justify-center text-center text-white pt-20">
-            <p>Latest Update: April 10, 2026</p>
+            <p>Latest Update: April 20, 2026</p>
             <p class="px-2">|</p>
             <p>&copy; 2026 REVOFUN. All rights reserved.</p>
         </div>
 
     </footer>
+    <!-- Footer End -->
     
     <script src="index.js"></script>
 </body>
