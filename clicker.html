@@ -10,34 +10,53 @@
 </head>
 <body class="bg-slate-950 text-white">
 
+    <!-- Header Start -->
     <header>
 
         <!-- Navbar Start -->
-        <nav class="flex justify-between items-center py-4 px-8 fixed w-full z-100">
+        <nav id="navbar" class="navbar flex justify-between items-center py-4 px-8 fixed w-full transition-all duration-800 z-100" aria-label="Main Navigation">
 
             <!-- Page Logo -->
-            <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" href="#home" class="w-[150px]">
+            <a href="index.html">
+                <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" class="w-[150px]">
+            </a>
 
             <!-- Page Navigation -->
             <ul class="flex gap-8 text-xl">
+
+                <!-- Home Page -->
                 <li><a href="index.html">Home</a></li>
+
+                <!-- Games Pages -->
                 <li class="relative group">
-                    <a class="cursor-pointer">Games</a>
+                    <button class="cursor-pointer">Games</button>
     
                     <!-- Dropdown Menu -->
                     <ul class="text-center absolute -translate-x-[63px] top-full mt-0 pt-2 w-48 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+
+                        <!-- Clicker Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110 rounded-t-xl">
                             <a href="clicker.html">Click to Win</a>
                         </li>
+
+                        <!-- Number Guessing Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110">
                             <a href="numberguess.html">Guess the Number</a>
                         </li>
+
+                        <!-- Rock Paper Scissor Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110 rounded-b-xl">
                             <a href="rockpaperscissor.html">Rock Paper Scissors</a>
                         </li>
+
                     </ul>
+
                 </li>
+
+                <!-- About Page -->
                 <li><a href="about.html">About</a></li>
+
+                <!-- Contact Page -->
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
@@ -45,48 +64,81 @@
         <!-- Navbar End -->
 
     </header>
+    <!-- Header End -->
 
     <main class="relative z-10 bg-slate-950">
 
-        <div id="bg-image">
+        <section class="clicker-image relative h-[100vh]">
+
+            <!-- Start Button -->
+            <div id="start-button-container" class="bg-indigo-900 absolute z-40 left-1/2 -translate-x-1/2 top-[45%] p-4 h-[150px] w-[320px] rounded-xl flex flex-col items-center justify-center gap-8">
+                <h1 class="text-[18px] font-bold">Let's Play "CLICK TO WIN!"</h1>
+                <button class="start-button bg-blue-500 p-2 w-[200px] rounded-lg cursor-pointer">Start</button>
+            </div>
 
             <!-- Scoreboard -->
-            <div id="scoreboard" class="absolute bg-indigo-950 border-orange-400 border-5 rounded-xl outline-2 outline-orange-950 opacity-0 p-10 flex flex-col gap-10 left-1/2 -translate-x-1/2 top-1/2 -translate-y-[120px]">
+            <div id="scoreboard" class="scoreboard absolute bg-indigo-950 border-orange-400 border-5 rounded-xl outline-2 outline-orange-950 opacity-0 p-10 flex flex-col gap-10 left-1/2 -translate-x-1/2 top-1/2 -translate-y-[120px]">
+
+                <!-- Scoreboard Panel -->
                 <div class="flex flex-col justify-between gap-10">
+
+                    <!-- Current Score -->
                     <div class="flex flex-col items-center text-center rounded-lg">
                         <p>Current Score</p>
                         <span id="finalscore" class="bg-indigo-600 w-[200px] rounded-lg">0</span>
                     </div>
+
+                    <!-- Highscore -->
                     <div class="flex flex-col items-center text-center">
                         <p>Highscore</p>
                         <span id="highscore" class="bg-indigo-600 w-[200px] rounded-lg">0</span>
                     </div>
                 </div>
+
+                <!-- Scoreboard Button -->
                 <div class="flex justify-center gap-10">
+
+                    <!-- Back To Home Button -->
                     <button class="bg-indigo-900 hover:bg-blue-700 hover:scale-110 transition duration-300 p-4 w-[200px] rounded-lg" onclick="window.location.href='index.html'">Back to Home</button>
                     
+                    <!-- Restart Button -->
                     <button id="restart" class="bg-indigo-900 hover:bg-blue-700 hover:scale-110 transition duration-300 p-4 w-[200px] rounded-lg">Restart</button>
                 </div>
+
             </div>
 
-            <!-- Timer Panel -->
-            <div class="bg-indigo-950 border-orange-400 border-5 rounded-xl outline-2 outline-orange-950 absolute p-4 w-[200px] text-center top-1/4 right-1/2 -translate-x-1/2 opacity-90">
-                <p>TIME : <span id="timer">10</span>s</p>
+            <div id="score-timer-container" class="hidden">
+
+                <!-- Timer Panel -->
+                <div class="bg-indigo-950 border-orange-400 border-5 rounded-xl outline-2 outline-orange-950 absolute p-4 w-[200px] text-center top-1/4 right-1/2 -translate-x-1/2 opacity-90">
+                    <p>TIME : <span id="timer">10</span>s</p>
+                </div>
+
+                <!-- Score Panel -->
+                <div class="bg-indigo-950 border-orange-400 border-5 rounded-xl outline-2 outline-orange-950 absolute p-4 w-[200px] text-center top-1/4 left-1/2 translate-x-1/2 opacity-90">
+                    <p>SCORE : <span id="score">0</span></p>
+                </div>
+
             </div>
 
-            <!-- Score Panel -->
-            <div class="bg-indigo-950 border-orange-400 border-5 rounded-xl outline-2 outline-orange-950 absolute p-4 w-[200px] text-center top-1/4 left-1/2 translate-x-1/2 opacity-90">
-                <p>SCORE : <span id="score">0</span></p>
-            </div>
+            <!-- Clicker Button -->
+            <button id="button-img" type="button" class="hidden">
+                <img src="image/REVOFUN_RedCircle.png" alt="Red Circle Image" class="button-img absolute w-[600px] top-[300px] right-[450px] transition-transform duration-500">
+            </button>
 
-            <!-- Button Image -->
-            <img id="button-img" src="image/REVOFUN_RedCircle.png" alt="">
-            <img id="button-img-1" src="image/REVOFUN_RedCircle_1.png" alt="">
-            <img id="button-img-2" src="image/REVOFUN_RedCircle_2.png" alt="">
-            <img id="button-img-3" src="image/REVOFUN_RedCircle_3.png" alt="">
-            <img id="button-img-start" src="image/REVOFUN_RedCircle_Start.png" alt="">
+            <button id="button-img-1" type="button" class="hidden">
+                <img src="image/REVOFUN_RedCircle_1.png" alt="Red Circle 1 Image" class="button-img-1">
+            </button>
 
-        </div>
+            <button id="button-img-2" type="button" class="hidden">
+                <img src="image/REVOFUN_RedCircle_2.png" alt="Red Circle 2 Image" class="button-img-2">
+            </button>
+
+            <button id="button-img-3" type="button" class="hidden">
+                <img src="image/REVOFUN_RedCircle_3.png" alt="Red Circle 3 Image" class="button-img-3">
+            </button>
+
+        </section>
 
     </main>
     

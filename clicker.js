@@ -1,16 +1,15 @@
 // Clicker Game
+const btnStartContainer = document.getElementById("start-button-container");
+const btnStart = btnStartContainer.querySelector("button")
+const scoreTimerContainer = document.getElementById("score-timer-container");
 const score = document.getElementById("score");
 const finalScore = document.getElementById("finalscore");
 const highScore = document.getElementById("highscore");
-
 const scoreBoard = document.getElementById("scoreboard");
 const restartBtn = document.getElementById("restart");
-
 const timerEl = document.getElementById("timer");
 const timerPanel = document.getElementById("timer-panel");
-
 const btn = document.getElementById("button-img");
-const btnStart = document.getElementById("button-img-start");
 const btn1 = document.getElementById("button-img-1");
 const btn2 = document.getElementById("button-img-2");
 const btn3 = document.getElementById("button-img-3");
@@ -32,10 +31,10 @@ btn.addEventListener("click", () => {
     incrementScore(); //Add points only when the user click the button
 
     // Add Animation when button clicked
-    btn.classList.add("active"); 
+    btn.classList.add("activate"); 
 
     setTimeout(() => {
-    btn.classList.remove("active");
+    btn.classList.remove("activate");
     }, 100);
 });
 
@@ -53,26 +52,28 @@ function startSequence() {
     timerEl.textContent = timeLeft;
     score.textContent = 0;
 
-    btn.style.display = "none";
-    btnStart.style.display = "none";
+    btnStartContainer.classList.add("hidden");
+    scoreTimerContainer.classList.remove("hidden");
+    btn.classList.add("hidden");
+    btnStart.classList.add("hidden");
 
-    btn3.style.display = "block";
-    btn2.style.display = "none";
-    btn1.style.display = "none";
+    btn3.classList.remove("hidden");
+    btn2.classList.add("hidden");
+    btn1.classList.add("hidden");
 
     setTimeout(() => {
-        btn3.style.display = "none";
-        btn2.style.display = "block";
+        btn3.classList.add("hidden");
+        btn2.classList.remove("hidden");
     }, 1500);
 
     setTimeout(() => {
-        btn2.style.display = "none";
-        btn1.style.display = "block";
+        btn2.classList.add("hidden");
+        btn1.classList.remove("hidden");
     }, 3000);
 
     setTimeout(() => {
-        btn1.style.display = "none";
-        btn.style.display = "block";
+        btn1.classList.add("hidden");
+        btn.classList.remove("hidden");
         gameActive = true;
         startTimer();
     }, 4500);
@@ -86,7 +87,7 @@ function startTimer() {
         timeLeft--;
         timerEl.textContent = timeLeft;
 
-        if (timeLeft < 0) {
+        if (timeLeft <= 0) {
             clearInterval(interval);
             endGame();
         }
@@ -97,10 +98,10 @@ function startTimer() {
 function endGame() {
     gameActive = false; //Stop The game
 
-    btn.style.display = "block"
-    btn1.style.display = "none";
-    btn2.style.display = "none";
-    btn3.style.display = "none";
+    btn.classList.remove("hidden");
+    btn1.classList.add("hidden");
+    btn2.classList.add("hidden");
+    btn3.classList.add("hidden");
 
     timeLeft = 0;
     timerEl.textContent = timeLeft;
@@ -139,14 +140,8 @@ restartBtn.addEventListener("click", () => {
         timeLeft = 10;
         timerEl.textContent = timeLeft;
 
-        // reset UI
-        btn.style.display = "none";
-        btn1.style.display = "none";
-        btn2.style.display = "none";
-        btn3.style.display = "none";
-
-        // Start again immediately
-        btnStart.style.display = "block";
+        // Restart the count down sequence
+        startSequence();
         
     },300);
 });

@@ -6,25 +6,19 @@ body{
     font-style: normal;
 }
 
-#bg-image{
+/* Clicker */
+.clicker-image{
     background-image: url(image/REVOFUN_ButtonContainer1.png);
     background-size: cover;
     background-position: top;
-    height: 100vh;
-    position: relative; /* IMPORTANT */
 }
-
-#button-img{
-    position: absolute;
-    width: 600px;
-    top: 300px;
-    right: 450px;
-    transition: transform 0.5s;
+.start-button{
+    animation: zoom 2s infinite ease-in-out;
 }
-#button-img.active{
+#button-img.activate img{
     transform: translateY(20px); /* pressed down */
 }
-#button-img-start, #button-img-1, #button-img-2, #button-img-3{
+.button-img-1, .button-img-2, .button-img-3{
     position: absolute;
     width: 600px;
     height: 430px;
@@ -32,16 +26,22 @@ body{
     right: 450px;
     transition: transform 0.5s;
 }
-#button-img-start:hover{
-    transform: scale(1.1);
-}
-#button-img-start.active{
-    transform: translateY(10px) scale(1.1); /* pressed down */
-}
-
-#scoreboard.activate{
+.scoreboard.activate{
     transition: opacity 2s ease;
     z-index: 1;
     opacity: 1;
     visibility: visible;
+}
+
+/* Animation */
+@keyframes zoom{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
