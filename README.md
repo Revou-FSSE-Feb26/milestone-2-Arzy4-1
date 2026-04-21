@@ -36,22 +36,15 @@ There are several types of features implemented in this platform, such as:
 The development of this gaming platform involved the use of several tools and technologies to **ensure a clean structure, smooth user experience, and interactive**. Each element was carefully built and styled to create a professional yet welcoming interface, reflecting both technical learning and creative exploration throughout the process.
 
 1. **Tools**
-    - Visual Studio Code (VS Code)
-    Use as Code Editor for **writing and editing the programming language** such as HTML, CSS, and Javascript.
-    - Opera GX
-    Web Browser use for **previewing and testing website** during development.
-    - GitHub
-    A platform used to **store, manage, and share** the project repository online.
+    - Visual Studio Code (VS Code): Use as Code Editor for **writing and editing the programming language** such as HTML, CSS, and Javascript.
+    - Opera GX: Web Browser use for **previewing and testing website** during development.
+    - GitHub: A platform used to **store, manage, and share** the project repository online.
 
 2. **Technologies**
-    - HTML
-    Utilized to **build a well-structured and semantic foundation** for the gaming platform, ensuring clarity, accessibility, and maintainability.
-    - Tailwind CSS
-    **Applied as the primary styling framework** to rapidly develop a consistent user interface using a utility-first approach.
-    - Vanilla CSS
-    Used to handle advanced styling requirements, including nested element customization and the **implementation of complex animations and visual effects**.
-    - JavaScript
-    Implemented to **develop core game logic, manage user interactions, and control dynamic behaviors across the platform**, enabling an interactive and engaging user experience.
+    - HTML: Utilized to **build a well-structured and semantic foundation** for the gaming platform, ensuring clarity, accessibility, and maintainability.
+    - Tailwind CSS: **Applied as the primary styling framework** to rapidly develop a consistent user interface using a utility-first approach.
+    - Vanilla CSS: Used to handle advanced styling requirements, including nested element customization and the **implementation of complex animations and visual effects**.
+    - JavaScript: Implemented to **develop core game logic, manage user interactions, and control dynamic behaviors across the platform**, enabling an interactive and engaging user experience.
 
 ---
 
