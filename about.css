@@ -41,14 +41,14 @@ body{
 /* Offer */
 .focus h2, .focus p, .offer img{
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(-15%);
     animation: left forwards;
     animation-timeline: view();
     animation-range: entry 20% cover 50%;
 }
 .offer h2, .offer p, .focus img{
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(15%);
     animation: right forwards;
     animation-timeline: view();
     animation-range: entry 20% cover 50%;
@@ -118,7 +118,7 @@ body{
 @keyframes left{
     from{
         opacity: 0;
-        transform: translateX(-100%);
+        transform: translateX(-15%);
     }
     to{
         opacity: 1;
@@ -128,7 +128,7 @@ body{
 @keyframes right{
     from{
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateX(15%);
     }
     to{
         opacity: 1;
