@@ -14,8 +14,9 @@ const timeDisplay = document.getElementById("time-display");
 const guessInput = document.getElementById("guess-input");
 const guessBtn = document.getElementById("guess-btn");
 const guessDisplay = document.getElementById("guess-display");
-const startBtn = document.getElementById("start-button");
-const countdownEl = document.getElementById("countdown");
+const startBtnContainer = document.getElementById("start-button-container");
+const startBtn = startBtnContainer.querySelector("button");
+const countDownEl = document.querySelector("#countdown span");
 const gameContainer = document.getElementById("game-container");
 const scoreBoard = document.getElementById("scoreboard");
 const restartBtn = document.getElementById("restart");
@@ -28,22 +29,27 @@ const timerPanel = document.getElementById("timer-panel");
 
 // When Start Button Clicked
 startBtn.addEventListener("click", () => {
+    startBtnContainer.classList.add("hidden");
     startBtn.classList.add("hidden");
+    startSequence();
+});
+
+function startSequence(){
 
     // Count Down Timer
     let count = 3;
-    countdownEl.classList.remove("hidden");
-    countdownEl.textContent = count;
+    countDownEl.classList.remove("hidden");
+    countDownEl.textContent = count;
 
     // When Count Down is 0
-    const countdownInterval = setInterval(() => {
+    const countDownInterval = setInterval(() => {
         count--;
-        countdownEl.textContent = count;
+        countDownEl.textContent = count;
 
         if (count === 0) {
-            clearInterval(countdownInterval);
+            clearInterval(countDownInterval);
 
-            countdownEl.classList.add("hidden");
+            countDownEl.classList.add("hidden");
             gameContainer.classList.add("activate");
 
             running = true; //Start The Game
@@ -76,7 +82,7 @@ startBtn.addEventListener("click", () => {
             }, 1000);
         }
     }, 1000);
-});
+}
 
 // When Guess Button CLicked
 guessBtn.addEventListener("click", () => {
@@ -150,8 +156,8 @@ restartBtn.addEventListener("click", () => {
         // hide scoreboard
         scoreBoard.classList.remove("activate");
 
-        // show start button again
-        startBtn.classList.remove("hidden");
+        // Immediately Start the count down sequence and restart game
+        startSequence();
 
         // OPTIONAL: reset game container
         gameContainer.classList.remove("activate");
@@ -161,4 +167,11 @@ restartBtn.addEventListener("click", () => {
         console.log("New Answer:", answer);
 
     },300);
+});
+
+// Disable Submit Form
+const guessForm = document.getElementById("guess-form");
+
+guessForm.addEventListener("submit", (e) => {
+    e.preventDefault(); //Prevent the page reload
 });
