@@ -10,34 +10,53 @@
 </head>
 <body class="bg-slate-950 text-white">
 
+    <!-- Header Start -->
     <header>
 
         <!-- Navbar Start -->
-        <nav class="flex justify-between items-center py-4 px-8 fixed w-full z-100">
+        <nav id="navbar" class="navbar flex justify-between items-center py-4 px-8 fixed w-full transition-all duration-800 z-100" aria-label="Main Navigation">
 
             <!-- Page Logo -->
-            <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" href="#home" class="w-[150px]">
+            <a href="index.html">
+                <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" class="w-[150px]">
+            </a>
 
             <!-- Page Navigation -->
             <ul class="flex gap-8 text-xl">
+
+                <!-- Home Page -->
                 <li><a href="index.html">Home</a></li>
+
+                <!-- Games Pages -->
                 <li class="relative group">
-                    <a class="cursor-pointer">Games</a>
+                    <button class="cursor-pointer">Games</button>
     
                     <!-- Dropdown Menu -->
                     <ul class="text-center absolute -translate-x-[63px] top-full mt-0 pt-2 w-48 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+
+                        <!-- Clicker Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110 rounded-t-xl">
                             <a href="clicker.html">Click to Win</a>
                         </li>
+
+                        <!-- Number Guessing Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110">
                             <a href="numberguess.html">Guess the Number</a>
                         </li>
+
+                        <!-- Rock Paper Scissor Game Page -->
                         <li class="px-4 py-2 duration-300 hover:scale-110 rounded-b-xl">
                             <a href="rockpaperscissor.html">Rock Paper Scissors</a>
                         </li>
+
                     </ul>
+
                 </li>
+
+                <!-- About Page -->
                 <li><a href="about.html">About</a></li>
+
+                <!-- Contact Page -->
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
@@ -45,66 +64,107 @@
         <!-- Navbar End -->
 
     </header>
+    <!-- Header End -->
 
     <main class="relative z-10 bg-slate-950">
 
-        <div id="bg-image" class="flex justify-center items-center">
-            <div id="game-container" class="relative w-[1000px] h-[600px] p-10 flex justify-center items-center overflow-hidden border-4 border-orange-500 rounded-[4rem] shadow-[0_10px_30px_rgba(0,0,0,1)]">
+        <section class="rps-image flex justify-center items-center relative h-[100vh]">
+            <div class="game-container relative w-[1000px] h-[600px] p-10 flex justify-center items-center overflow-hidden border-4 border-orange-500 rounded-[4rem] shadow-[0_10px_30px_rgba(0,0,0,1)]">
 
-                <!-- Start -->
+                <!-- Game Title Container -->
                 <div id="start" class="absolute flex flex-col items-center justify-center h-full gap-6 text-center">
-                    <h1 class="text-[25px]">Let's Play "<strong>ROCK PAPER SCISSOR</strong>"</h1>
-                    <img id="start-button" src="image/REVOFUN_StartText.png" alt="" class="w-[200px]">
+
+                    <!-- Game Title -->
+                    <h1 class="text-[25px]">Let's Play "<strong>ROCK PAPER SCISSOR!</strong>"</h1>
+
+                    <!-- Start Button -->
+                    <button type="button">
+                        <img id="start-button" src="image/REVOFUN_StartText.png" alt="Start Button Image" aria-label="start-game" class="start-button w-[200px]">
+                    </button>
                 </div>
 
                 <!-- Player Choices -->
                 <div id="player-choices-box" class="absolute w-[900px] h-[500px] hidden">
-                    <img id="player-choice" src="image/REVOFUN_RockHand.png" alt="Weapon Rock Image" class="w-[250px] h-[250px] absolute top-1/6 ml-10">
 
-                    <img id="versus" src="image/REVOFUN_VersusSymbol.png" alt="Versus Image" class="w-[300px] h-[250px] relative top-1/6 left-[295px]">
+                    <!-- Player -->
+                    <img id="player-choice" src="image/REVOFUN_RockHand.png" alt="Weapon Rock Image" class="player-choice w-[250px] h-[250px] absolute top-1/6 ml-10 left-[-40%]">
+
+                    <!-- Versus -->
+                    <img id="versus" src="image/REVOFUN_VersusSymbol.png" alt="Versus Image" class="versus w-[300px] h-[250px] relative top-1/6 left-[295px]">
                     
-                    <img id="computer-choice" src="image/REVOFUN_RockHand.png" alt="Weapon Rock Image" class="w-[250px] h-[250px] rotate-y-[180deg] absolute top-1/6 right-1 mr-10">
+                    <!-- Computer -->
+                    <img id="computer-choice" src="image/REVOFUN_RockHand.png" alt="Weapon Rock Image" class="computer-choice w-[250px] h-[250px] rotate-y-[180deg] absolute top-1/6 right-1 mr-10 right-[-40%]">
                 </div>
 
                 <!-- Weapon Choice -->
                 <div id="weapon" class="flex flex-col items-center justify-between h-full hidden">
-                    <h2 id="weapon-title" class="relative">ROCK PAPER SCISSOR</h2>
-                    <div id="weapon-choice" class="relative flex flex-col items-center gap-8 hidden">   
-                        <h3>Choose Your Weapon</h3>
+
+                    <!-- Weapon Title -->
+                    <h2 id="weapon-title" class="weapon-title relative text-2xl">ROCK PAPER SCISSOR</h2>
+
+                    <div id="weapon-choice" class="weapon-choice relative flex flex-col items-center gap-8 hidden">
+
+                        <!-- Weapon sub Title -->
+                        <h3 class="text-xl">Choose Your Weapon</h3>
+
+                        <!-- Weapon List -->
                         <ul class="flex justify-center gap-10">
+
+                            <!-- Rock Image -->
                             <li class="Rock">
-                                <img src="image/REVOFUN_RockHand1.png" alt="">
+                                <img src="image/REVOFUN_RockHand1.png" alt="Weapon Rock Image">
                             </li>
+
+                            <!-- Paper Image -->
                             <li class="Paper">
-                                <img src="image/REVOFUN_PaperHand1.png" alt="">
+                                <img src="image/REVOFUN_PaperHand1.png" alt="Weapon Paper Image">
                             </li>
+
+                            <!-- Scissor Image -->
                             <li class="Scissor">
-                                <img src="image/REVOFUN_ScissorHand1.png" alt="">
+                                <img src="image/REVOFUN_ScissorHand1.png" alt="Weapon Scissor Image">
                             </li>
+
                         </ul>
                     </div>
 
-                    <!-- Play Again Button -->
-                    <div id="result-box" class="relative flex flex-col top-[25%] p-4 items-center gap-5  hidden">
+                    <!-- Result Container -->
+                    <div id="result-box" class="result-box relative flex flex-col top-[25%] p-4 items-center gap-5 hidden">
+
+                        <!-- Show Result Text -->
                         <h3 class="relative"></h3>
+
+                        <!-- Back To Home and Restart Button -->
                         <div class="flex justify-center gap-10">
+
+                            <!-- Back To Home Button -->
                             <button class="relative bg-indigo-900 hover:bg-blue-700 hover:scale-105 transition duration-300 p-4 w-[200px] rounded-lg" onclick="window.location.href='index.html'">Back to Home</button>
                             
+                            <!-- Restart Button -->
                             <button id="restart" class="relative bg-indigo-900 hover:bg-blue-700 hover:scale-105 transition duration-300 p-4 w-[200px] rounded-lg">Restart</button>
+
                         </div>
+
                     </div>
 
                     <!-- Score Box -->
-                    <div id="score-box">
-                        <h4 id="won">Won: <span>0</span></h3>
-                        <h4 id="lost">Lost: <span>0</span></h3>
-                        <h4 id="draw">Draw: <span>0</span></h3>
+                    <div id="score-box" class="score-box relative flex">
+
+                        <!-- Won -->
+                        <p id="won">Won: <span>0</span></p>
+
+                        <!-- Lost -->
+                        <p id="lost">Lost: <span>0</span></p>
+
+                        <!-- Draw -->
+                        <p id="draw">Draw: <span>0</span></p>
+
                     </div>
 
                 </div>
                 
             </div>
-        </div>
+        </section>
 
     </main>
     

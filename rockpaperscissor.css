@@ -6,14 +6,13 @@ body{
     font-style: normal;
 }
 
-#bg-image{
+/* Rock Paper Scissor Game */
+.rps-image{
     background-image: url(image/REVOFUN_RPSContainer.png);
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    position: relative; /* IMPORTANT */
 }
-#game-container::before{
+.game-container::before{
     content: "";
     position: absolute;
     top: 0;
@@ -28,24 +27,18 @@ body{
 }
 
 /* Start Button Animation */
-#start-button{
+.start-button{
     animation: zoom 2s infinite ease-in-out;
 }
 
 /* Player Choices */
-#player-choice{
-    left: -40%;
-}
-#computer-choice{
-    right: -40%;
-}
-#player-choice.activate{
+.player-choice.activate{
     transition: all .3s;
     left: 0;
     animation: player .8s linear infinite;
     animation-delay: .5s;
 }
-#computer-choice.activate{
+.computer-choice.activate{
     transition: all .3s;
     right: 0;
     animation: computer .8s linear infinite;
@@ -53,31 +46,31 @@ body{
 }
 
 /* Weapon Animation */
-#weapon-title.activate{
+.weapon-title.activate{
     animation: slideDown 0.5s ease forwards;
 }
-#weapon-choice.activate h3{
+.weapon-choice.activate h3{
     animation: fadeIn1 1.5s ease forwards;
 }
-#weapon-choice.activate li:nth-child(1){
+.weapon-choice.activate li:nth-child(1){
     opacity: 1;
     animation: fadeIn1 1.8s ease forwards;
 }
-#weapon-choice.activate li:nth-child(2){
+.weapon-choice.activate li:nth-child(2){
     opacity: 1;
     animation: fadeIn1 2.1s ease forwards;
 }
-#weapon-choice.activate li:nth-child(3){
+.weapon-choice.activate li:nth-child(3){
     opacity: 1;
     animation: fadeIn1 2.4s ease forwards;
 }
-#weapon-choice img:hover{
+.weapon-choice img:hover{
     transform: scale(1.2);
 }
-#weapon-choice img{
+.weapon-choice img{
     transition: 0.5s ease;
 }
-#weapon-choice img{
+.weapon-choice img{
     width: 100px;
     padding: 1em;
     border-radius: 100%;
@@ -90,11 +83,10 @@ body{
 }
 
 /* Result Box */
-#result-box.activate{
+.result-box.activate{
     animation: fadeIn2 2s ease forwards;
 }
-
-#result-box::before{
+.result-box::before{
     content: "";
     position: absolute;
     top: 0;
@@ -110,21 +102,19 @@ body{
     box-shadow: 0 10px 30px rgba(0, 0, 0, 1);
 }
 
-#score-box{
-    position: relative;
-    display: flex;
-}
-#score-box h4{
+/* Score Box */
+.score-box p{
     border-right: 2px solid orange;
     padding: 1rem;
 }
-#score-box.activate h4{
+.score-box.activate p{
     animation: slideUp 0.5s ease forwards;
 }
-#score-box h4:nth-child(3){
+.score-box p:nth-child(3){
     border-right: none;
 }
 
+/* Animation */
 @keyframes fadeIn1{
     from{
         opacity: 0;

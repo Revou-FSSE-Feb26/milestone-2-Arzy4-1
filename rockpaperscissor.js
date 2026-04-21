@@ -96,18 +96,24 @@ let showResult =(result) => {
     resultBox.classList.add("activate"); //for animation
 
     // Conditional Result
-    if(result === "You"){
-        resultTxt.innerHTML = `CONGRATULATION, You Won!!`;
-        won++;
-        wonValue.innerHTML = won;
-    }else if(result === "Computer"){
-        resultTxt.innerHTML = `You Lost, Try Again`;
-        lost++;
-        lostValue.innerHTML = lost;
-    }else{
-        resultTxt.innerHTML = `Wow, It's A Draw`;
-        draw++;
-        drawValue.innerHTML = draw;
+    switch (result){
+        case "You":
+            resultTxt.innerHTML = `CONGRATULATION, You Won!!`;
+            won++;
+            wonValue.innerHTML = won;
+            break;
+
+        case "Computer":
+            resultTxt.innerHTML = `You Lost, Try Again`;
+            lost++;
+            lostValue.innerHTML = lost;
+            break;
+
+        default:
+            resultTxt.innerHTML = `Wow, It's A Draw`;
+            draw++;
+            drawValue.innerHTML = draw;
+            break;
     }
 }
 
