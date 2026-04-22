@@ -17,6 +17,71 @@ Built using modern web technologies, **REVOFUN focuses on clean design, responsi
 
 ---
 
+## GAMES INSTRUCTIONS
+### Click To Win
+
+A fast-paced clicker game designed to test your speed and reflexes. The objective is simple—click as many times as possible within the time limit.
+
+#### How to Play
+1. Click the **Start** button to begin the game.  
+2. After count down ends, the game start and the button will be clickable.  
+3. Click the button as quickly as possible.  
+4. Each click increases your score by **1 point**.  
+5. The game ends when the timer reaches zero.  
+6. Your final score will be displayed at the end.
+
+#### Objective
+- Achieve the **highest number of clicks** within the limited time and try to beat your previous highscore.
+
+<br>
+
+### Guess My Number
+
+A logic-based game that challenges your ability to analyze hints and make accurate decisions under time pressure.
+
+#### How to Play
+1. Click the **Start** button to begin the game
+2. After count down ends, the game start and user can enter the number.
+2. A random number between **1 and 100** will be generated.  
+3. Enter your guess in the input field and click **Guess This Number** button.  
+4. After each attempt, the game will provide feedback:
+    - **Too High** → your guess is above the correct number  
+    - **Too Low** → your guess is below the correct number
+    - **Close! Lower!** → your guess is near above the correct number   
+    - **Close! Higher!** → your guess is near below the correct number 
+5. Continue guessing based on the hints provided.  
+6. The game ends when you correctly guess the number or the **30-second timer** runs out.
+
+#### Objective
+- Find the correct number **as quickly as possible** by using the hints efficiently and minimizing incorrect guesses.
+
+<br>
+
+### Rock Paper Scissors
+
+A classic decision-making game where you compete against the computer by choosing the best move each round.
+
+#### How to Play
+1. Click the **Start** button to begin the game.  
+2. Choose one of the available options:
+    - **Rock**
+    - **Paper**
+    - **Scissors**  
+3. The computer will randomly select its choice.  
+4. The result of each round will be determined based on the rules:
+    - **Rock beats Scissors**  
+    - **Scissors beats Paper**  
+    - **Paper beats Rock**  
+5. The scoreboard will update after each round, tracking:
+    - Wins  
+    - Losses  
+    - Draws  
+
+#### Objective
+- Win as many rounds as possible against the computer by making the right decisions each time.
+
+---
+
 ## KEY FEATURES
 
 **REVOFUN is designed to deliver simple and engaging casual games** that not only help relieve stress but also provide meaningful challenges for players. Each game is carefully crafted to offer a balance between relaxation and mental stimulation, allowing users to enjoy quick moments of entertainment while still engaging their reflexes, logic, and decision-making skills.
