@@ -17,6 +17,20 @@ Built using modern web technologies, **REVOFUN focuses on clean design, responsi
 
 ---
 
+## KEY FEATURES
+
+**REVOFUN is designed to deliver simple and engaging casual games** that not only help relieve stress but also provide meaningful challenges for players. Each game is carefully crafted to offer a balance between relaxation and mental stimulation, allowing users to enjoy quick moments of entertainment while still engaging their reflexes, logic, and decision-making skills.
+
+Beyond just entertainment, **REVOFUN aims to create an enjoyable and satisfying user experience** through smooth animations, interactive gameplay, and immediate feedback. It is built for those who want to take a short break, reduce stress, and still feel challenged in a fun and engaging way—anytime and anywhere.
+
+There are several types of features implemented in this platform, such as:
+
+1. **Accessible Gameplay**. Each game is **easy to understand and play**, allowing user to jump straight to the game without complex instructions
+2. **Simple yet Challenging**. Despite their simplicity, the games **challenge players’ reflexes, logic, and decision-making skills**.
+3. **Multiple Mini-Games**. Includes a **variety of games such as Clicker, Number Guessing, and Rock Paper Scissors**, each offering a unique gameplay experience.
+
+---
+
 ## GAMES INSTRUCTIONS
 ### Click To Win
 
@@ -79,20 +93,6 @@ A classic decision-making game where you compete against the computer by choosin
 
 #### Objective
 - Win as many rounds as possible against the computer by making the right decisions each time.
-
----
-
-## KEY FEATURES
-
-**REVOFUN is designed to deliver simple and engaging casual games** that not only help relieve stress but also provide meaningful challenges for players. Each game is carefully crafted to offer a balance between relaxation and mental stimulation, allowing users to enjoy quick moments of entertainment while still engaging their reflexes, logic, and decision-making skills.
-
-Beyond just entertainment, **REVOFUN aims to create an enjoyable and satisfying user experience** through smooth animations, interactive gameplay, and immediate feedback. It is built for those who want to take a short break, reduce stress, and still feel challenged in a fun and engaging way—anytime and anywhere.
-
-There are several types of features implemented in this platform, such as:
-
-1. **Accessible Gameplay**. Each game is **easy to understand and play**, allowing user to jump straight to the game without complex instructions
-2. **Simple yet Challenging**. Despite their simplicity, the games **challenge players’ reflexes, logic, and decision-making skills**.
-3. **Multiple Mini-Games**. Includes a **variety of games such as Clicker, Number Guessing, and Rock Paper Scissors**, each offering a unique gameplay experience.
 
 ---
 
