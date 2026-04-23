@@ -6,6 +6,14 @@ body{
     font-style: normal;
 }
 
+/* Navbar */
+.group i {
+    transition: transform 0.3s ease;
+}
+.group:hover i {
+    transform: rotate(-180deg);
+}
+
 /* Rock Paper Scissor Game */
 .rps-image{
     background-image: url(image/REVOFUN_RPSContainer.png);

@@ -10,6 +10,12 @@ body{
 .navbar.activate{
     background-color: #1e1b4b;
 }
+.group i {
+    transition: transform 0.3s ease;
+}
+.group:hover i {
+    transform: rotate(-180deg);
+}
 
 .intro h1{
     font-family: "Poppins", sans-serif;

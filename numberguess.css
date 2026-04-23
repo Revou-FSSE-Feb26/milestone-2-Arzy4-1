@@ -6,6 +6,14 @@ body{
     font-style: normal;
 }
 
+/* Navbar */
+.group i {
+    transition: transform 0.3s ease;
+}
+.group:hover i {
+    transform: rotate(-180deg);
+}
+
 /* Number Guessing Game */
 .number-guessing-image{
     background-image: url(image/REVOFUN_GNContainer.png);
