@@ -21,6 +21,7 @@ function initialGameState(){
     return{
         timeLeft: 10,
         gameActive: false,
+        isStarting: false
     }
 };
 
@@ -47,13 +48,19 @@ btn.addEventListener("click", () => {
 
 // When Start Button Clicked
 btnStart.addEventListener("click", () => {
+    btnStart.disabled = true; //Prevents multiple clicks
     startSequence();
 });
 
 // Count Down Function & Game Initialization
 function startSequence() {
+
+    // Prevent starting the game again while the countdown is running or the game is already active
+    if(gameState.isStarting || gameState.gameActive) return; 
+
     clearInterval(interval);
     gameState = initialGameState();
+    gameState.isStarting = true; //The count down is currently running
     
     timerEl.textContent = gameState.timeLeft;
     score.textContent = 0;
@@ -80,7 +87,8 @@ function startSequence() {
     setTimeout(() => {
         btn1.classList.add("hidden");
         btn.classList.remove("hidden");
-        gameState.gameActive = true;
+        gameState.gameActive = true; //The game starts and currently running
+        gameState.isStarting = false; //Count down is not running anymore
         startTimer();
     }, 4500);
 }
