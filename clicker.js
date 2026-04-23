@@ -14,19 +14,26 @@ const btn1 = document.getElementById("button-img-1");
 const btn2 = document.getElementById("button-img-2");
 const btn3 = document.getElementById("button-img-3");
 
-let timeLeft = 10;
-let gameActive = false;
+let gameState = initialGameState();
 let interval;
+
+function initialGameState(){
+    return{
+        timeLeft: 10,
+        gameActive: false,
+    }
+};
+
 
 // Adding 1 Point
 function incrementScore() {
-    if (!gameActive) return; //Add points only when the game runs
+    if (!gameState.gameActive) return; //Add points only when the game runs
     score.textContent = Number(score.textContent) + 1; //Adding 1 point
 }
 
 // When Button Clicked
 btn.addEventListener("click", () => {
-    if (!gameActive) return;
+    if (!gameState.gameActive) return;
 
     incrementScore(); //Add points only when the user click the button
 
@@ -46,10 +53,9 @@ btnStart.addEventListener("click", () => {
 // Count Down Function & Game Initialization
 function startSequence() {
     clearInterval(interval);
-
-    gameActive = false;
-    timeLeft = 10;
-    timerEl.textContent = timeLeft;
+    gameState = initialGameState();
+    
+    timerEl.textContent = gameState.timeLeft;
     score.textContent = 0;
 
     btnStartContainer.classList.add("hidden");
@@ -74,7 +80,7 @@ function startSequence() {
     setTimeout(() => {
         btn1.classList.add("hidden");
         btn.classList.remove("hidden");
-        gameActive = true;
+        gameState.gameActive = true;
         startTimer();
     }, 4500);
 }
@@ -84,10 +90,10 @@ function startTimer() {
     clearInterval(interval);
 
     interval = setInterval(() => {
-        timeLeft--;
-        timerEl.textContent = timeLeft;
+        gameState.timeLeft--;
+        timerEl.textContent = gameState.timeLeft;
 
-        if (timeLeft <= 0) {
+        if (gameState.timeLeft <= 0) {
             clearInterval(interval);
             endGame();
         }
@@ -96,15 +102,15 @@ function startTimer() {
 
 // When Game Ends
 function endGame() {
-    gameActive = false; //Stop The game
+    gameState.gameActive = false; //Stop The game
 
     btn.classList.remove("hidden");
     btn1.classList.add("hidden");
     btn2.classList.add("hidden");
     btn3.classList.add("hidden");
 
-    timeLeft = 0;
-    timerEl.textContent = timeLeft;
+    gameState.timeLeft = 0;
+    timerEl.textContent = gameState.timeLeft;
 
     // Show the Scoreboard
     scoreBoard.classList.add("activate");
@@ -131,14 +137,11 @@ restartBtn.addEventListener("click", () => {
         // hide scoreboard
         scoreBoard.classList.remove("activate");
 
-        // reset game state
+        // reset game state, score, and timer
         clearInterval(interval);
-        gameActive = false;
-
-        // reset score + timer
+        gameState = initialGameState();
         score.textContent = 0;
-        timeLeft = 10;
-        timerEl.textContent = timeLeft;
+        timerEl.textContent = gameState.timeLeft;
 
         // Restart the count down sequence
         startSequence();

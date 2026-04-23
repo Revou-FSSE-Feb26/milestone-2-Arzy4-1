@@ -1,14 +1,4 @@
 // Number Guessing Game
-const minNum = 1;
-const maxNum = 100;
-let answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-
-console.log("Answer:", answer);
-
-let attempts = 0;
-let seconds = 0;
-let running = true;
-
 const hintText = document.getElementById("hint-text");
 const timeDisplay = document.getElementById("time-display");
 const guessInput = document.getElementById("guess-input");
@@ -27,57 +17,74 @@ const finalNumber = document.getElementById("final-number");
 const timerEl = document.getElementById("timer");
 const timerPanel = document.getElementById("timer-panel");
 
+const minNum = 1;
+const maxNum = 100;
+
+let gameState = initialGameState();
+let timer;
+
+function initialGameState() {
+    return {
+        answer: Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum, 
+        attempts: 0, 
+        seconds: 0, 
+        running: false
+    }
+};
+
 // When Start Button Clicked
 startBtn.addEventListener("click", () => {
     startBtnContainer.classList.add("hidden");
     startBtn.classList.add("hidden");
-    startSequence();
+    startSequence(); 
 });
 
+// This function handles the full game start flow: show countdown first, then begin the 30-second game timer
 function startSequence(){
 
     // Count Down Timer
-    let count = 3;
+    let count = 3; // Start a 3-second countdown before the game begins
     countDownEl.classList.remove("hidden");
     countDownEl.textContent = count;
 
-    // When Count Down is 0
+    // When Count Down Ends
     const countDownInterval = setInterval(() => {
         count--;
         countDownEl.textContent = count;
 
+        // Once countdown reaches 0, start the main game timer
         if (count === 0) {
             clearInterval(countDownInterval);
 
-            countDownEl.classList.add("hidden");
-            gameContainer.classList.add("activate");
+            countDownEl.classList.add("hidden"); //Hide the count down timer
+            gameContainer.classList.add("activate"); //Show all the game panel
 
-            running = true; //Start The Game
-            timeDisplay.textContent = seconds;
+            gameState.running = true; // Start the game, allow guessing and timer updates after the countdown finishes
+            timeDisplay.textContent = gameState.seconds; //show the game timer
 
             timer = setInterval(() => {
-                if (!running) return;
+                if (!gameState.running) return; // "running" controls whether the game is active or stopped
 
-                seconds++; //Game Timer Start (adding)
-                timeDisplay.textContent = seconds;
+                gameState.seconds++; // Main game timer: counts how long the player takes to guess
+                timeDisplay.textContent = gameState.seconds;
 
-                // When The Timer is Up
-                if (seconds >= 30) {
+                // If the player does not guess the correct number within 30 seconds, end the game, reveal the answer, and show the scoreboard
+                if (gameState.seconds >= 30) {
                     clearInterval(timer);
-                    running = false;
-                    guessInput.disabled = true;
-                    guessBtn.style.pointerEvents = "none";
-                    guessBtn.style.opacity = "0.6";
-                    scoreBoard.classList.add("activate");
-                    finalText.textContent = `Too Bad, Your Final Number Is`;
+                    gameState.running = false; //End the game if the timer reach 30s
+                    guessInput.disabled = true; //after the game ends, user can't enter a number anymore
+                    guessBtn.style.pointerEvents = "none"; //"Guess This Number" button is not clickable anymore
+                    guessBtn.style.opacity = "0.6"; //Reduce opacity for "Guess This Number" button
+                    scoreBoard.classList.add("activate"); //Show the scoreboard
+                    finalText.textContent = `Too Bad, Your Final Number Is`; //Show final text "Too Bad, Your Final Number Is" if user didn't put any number
 
                     // Showing The Final Answer and Current Time
-                    finalNumber.textContent = answer;
+                    finalNumber.textContent = gameState.answer;
                     finalTime.textContent = `-`;
 
                     // Save the Final Answer and Show the Highscore Time
                     let savedHighScore = Number(localStorage.getItem("highScoreTime")) || 0;
-                    highScoreTime.textContent = savedHighScore + `s`;
+                    highScoreTime.textContent = `${savedHighScore}s`;
                 }
             }, 1000);
         }
@@ -86,7 +93,7 @@ function startSequence(){
 
 // When Guess Button CLicked
 guessBtn.addEventListener("click", () => {
-    if (!running) return;
+    if (!gameState.running) return; // "running" controls whether the game is active or stopped
 
     const guess = Number(guessInput.value);
 
@@ -100,71 +107,73 @@ guessBtn.addEventListener("click", () => {
         return;
     }
 
-    attempts++;
+    gameState.attempts++;
 
-    // When The Guess is Correct
-    if (guess == answer) {
+    // When user guess
+    if (guess == gameState.answer) { // End the game immediately when the player finds the correct answer
         hintText.textContent = `Correct!`;
-        running = false;
-        guessInput.disabled = true;
-        guessBtn.style.pointerEvents = "none";
-        guessBtn.style.opacity = "0.6";
-        scoreBoard.classList.add("activate");
+        gameState.running = false; //Game ends immediately
+        guessInput.disabled = true; //User can't input number anymore
+        guessBtn.style.pointerEvents = "none"; //"Guess This Number" button is not clickable anymore
+        guessBtn.style.opacity = "0.6"; //Reduce opacity of the button
+        scoreBoard.classList.add("activate"); //Immediately show the scoreboard
         finalText.textContent = `CONGRATULATION!! Your Final Number Is`;
-        finalNumber.textContent = answer;
+        finalNumber.textContent = gameState.answer;
 
         // Show The Current Time
-        const currentScore = seconds;
-        finalTime.textContent = currentScore + `s`;
+        const currentScore = gameState.seconds;
+        finalTime.textContent = `${currentScore}s`;
 
         // Save The Current Time
         let savedHighScore = Number(localStorage.getItem("highScoreTime")) || 0;
 
-        // Rewrite the Current Time as Saved Highscore Time
+        // Update highscore only if current score is better (lower time)
         if (savedHighScore === 0 || currentScore <= savedHighScore) {
-            savedHighScore = currentScore;
+            savedHighScore = currentScore; //Update Highscore if the user hit new record
             localStorage.setItem("highScoreTime", savedHighScore);
         }
 
         // Show The Highscore Time
-        highScoreTime.textContent = savedHighScore + `s`;
-    } else if (Math.abs(guess - answer) <= 10) {
-        hintText.textContent = guess < answer ? "Close! Higher!" : "Close! Lower!"; //If the guess is 10 number closer to the answer
-    } else {
-        hintText.textContent = guess < answer ? "Too Low!!" : "Too High!!"; //If the guess is too far
+        highScoreTime.textContent = `${savedHighScore}s`;
+
+    } else if (Math.abs(guess - gameState.answer) <= 10) { // Give a "Close" hint when the guess is within range of 10 numbers of the correct answer
+        hintText.textContent = guess < gameState.answer
+        ? "Close! Higher!"
+        : "Close! Lower!";
+    } else { // Give a "Too" hint when the guess is too far from the correct answer
+        hintText.textContent = guess < gameState.answer
+        ? "Too Low!!"
+        : "Too High!!";
     }
 
     guessInput.value = ""; //The input goes empty after user input the number
     guessInput.focus(); //User can immediately input the number
 });
 
-// When Restart Button Clicked
+// Reset timer, input state, scoreboard, and answer before starting a new countdown
 restartBtn.addEventListener("click", () => {
     setTimeout(()=> {
 
-        // Reset Game State
+        // Reset the data
+        gameState = initialGameState();
+
+        // Reset timer and input state
         clearInterval(timer);
-        running = false;
-        seconds = 0;
         hintText.textContent = "Start guessing...";
-        timeDisplay.textContent = seconds;
-        guessInput.disabled = false;
+        timeDisplay.textContent = gameState.seconds;
+        guessInput.disabled = false; //User can't input any number
         guessBtn.style.pointerEvents = "auto";
         guessBtn.style.opacity = "1";
-        guessInput.value = "";
+        guessInput.value = ""; //Empty the input field
 
         // hide scoreboard
         scoreBoard.classList.remove("activate");
 
-        // Immediately Start the count down sequence and restart game
+        // Immediately Start the count down sequence and restart the game
         startSequence();
 
-        // OPTIONAL: reset game container
+        // Show all the game panel again after start sequence ends
         gameContainer.classList.remove("activate");
-
-        // generate new answer
-        answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-        console.log("New Answer:", answer);
 
     },300);
 });

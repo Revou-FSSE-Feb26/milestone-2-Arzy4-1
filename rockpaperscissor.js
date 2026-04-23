@@ -18,7 +18,15 @@ let lostValue = document.querySelector("#lost span");
 let drawValue = document.querySelector("#draw span");
 
 // Initialized the Score
-let won = 0, lost = 0, draw = 0;
+let gameScore = initialGameScore();
+
+function initialGameScore(){
+    return {
+        won: 0,
+        lost: 0,
+        draw: 0
+    }
+}
 
 // Computer's Possible Choices
 let computer = ["Rock", "Paper", "Scissor"];
@@ -99,20 +107,20 @@ let showResult =(result) => {
     switch (result){
         case "You":
             resultTxt.innerHTML = `CONGRATULATION, You Won!!`;
-            won++;
-            wonValue.innerHTML = won;
+            gameScore.won++;
+            wonValue.innerHTML = gameScore.won;
             break;
 
         case "Computer":
             resultTxt.innerHTML = `You Lost, Try Again`;
-            lost++;
-            lostValue.innerHTML = lost;
+            gameScore.lost++;
+            lostValue.innerHTML = gameScore.lost;
             break;
 
         default:
             resultTxt.innerHTML = `Wow, It's A Draw`;
-            draw++;
-            drawValue.innerHTML = draw;
+            gameScore.draw++;
+            drawValue.innerHTML = gameScore.draw;
             break;
     }
 }
