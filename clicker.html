@@ -13,55 +13,7 @@
     <!-- Header Start -->
     <header>
 
-        <!-- Navbar Start -->
-        <nav id="navbar" class="navbar flex justify-between items-center py-4 px-8 fixed w-full transition-all duration-800 z-100" aria-label="Main Navigation">
-
-            <!-- Page Logo -->
-            <a href="index.html">
-                <img src="image/REVOFUN_Logo.png" alt="REVOFUN LOGO" class="w-[150px]">
-            </a>
-
-            <!-- Page Navigation -->
-            <ul class="flex gap-8 text-xl">
-
-                <!-- Home Page -->
-                <li><a href="index.html">Home</a></li>
-
-                <!-- Games Pages -->
-                <li class="relative group">
-                    <button class="cursor-pointer">Games</button>
-    
-                    <!-- Dropdown Menu -->
-                    <ul class="text-center absolute -translate-x-[63px] top-full mt-0 pt-2 w-48 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
-
-                        <!-- Clicker Game Page -->
-                        <li class="px-4 py-2 duration-300 hover:scale-110 rounded-t-xl">
-                            <a href="clicker.html">Click to Win</a>
-                        </li>
-
-                        <!-- Number Guessing Game Page -->
-                        <li class="px-4 py-2 duration-300 hover:scale-110">
-                            <a href="numberguess.html">Guess the Number</a>
-                        </li>
-
-                        <!-- Rock Paper Scissor Game Page -->
-                        <li class="px-4 py-2 duration-300 hover:scale-110 rounded-b-xl">
-                            <a href="rockpaperscissor.html">Rock Paper Scissors</a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-                <!-- About Page -->
-                <li><a href="about.html">About</a></li>
-
-                <!-- Contact Page -->
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-        </nav>
-        <!-- Navbar End -->
+        <div id="navbar-placeholder"></div>
 
     </header>
     <!-- Header End -->
@@ -71,7 +23,7 @@
         <section class="clicker-image relative h-[100vh]">
 
             <!-- Start Button -->
-            <div id="start-button-container" class="bg-indigo-900 absolute z-40 left-1/2 -translate-x-1/2 top-[45%] p-4 h-[150px] w-[320px] rounded-xl flex flex-col items-center justify-center gap-8">
+            <div id="start-button-container" class="bg-indigo-900 absolute z-40 left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2 p-4 py-6 w-[320px] rounded-xl flex flex-col items-center justify-center gap-8 text-center">
                 <h1 class="text-[18px] font-bold">Let's Play "CLICK TO WIN!"</h1>
                 <button class="start-button bg-blue-500 p-2 w-[200px] rounded-lg cursor-pointer">Start</button>
             </div>
@@ -143,5 +95,7 @@
     </main>
     
     <script src="clicker.js"></script>
+    <script src="navbar.js"></script>
+
 </body>
 </html>
