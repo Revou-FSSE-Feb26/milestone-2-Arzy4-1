@@ -1,7 +1,7 @@
 // Inject Navbar HTML Here
 document.getElementById("navbar-placeholder").innerHTML = `
     <!-- Navbar Start -->
-        <nav id="navbar" class="navbar flex justify-between items-center py-4 px-8 fixed w-full transition-all duration-800 z-100" aria-label="Main Navigation">
+        <nav id="navbar" class="navbar flex justify-between items-center py-4 px-8 fixed w-full transition-all duration-800 z-100 [&_a,button]:hover:text-gray-300" aria-label="Main Navigation">
 
             <!-- Page Logo -->
             <a href="index.html">
@@ -15,8 +15,8 @@ document.getElementById("navbar-placeholder").innerHTML = `
                 <li><a href="index.html">Home</a></li>
 
                 <!-- Games Pages -->
-                <li class="relative group">
-                    <button class="cursor-pointer">Games</button>
+                <li class="group relative">
+                    <button class="group cursor-pointer">Games <i class="fa-solid fa-caret-down"></i></button>
     
                     <!-- Dropdown Menu -->
                     <ul class="text-center absolute -translate-x-[63px] top-full mt-0 pt-2 w-48 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
