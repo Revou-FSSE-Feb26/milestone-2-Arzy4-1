@@ -110,7 +110,7 @@ guessBtn.addEventListener("click", () => {
     gameState.attempts++;
 
     // When user guess
-    if (guess == gameState.answer) { // End the game immediately when the player finds the correct answer
+    if (guess === gameState.answer) { // End the game immediately when the player finds the correct answer
         hintText.textContent = `Correct!`;
         gameState.running = false; //Game ends immediately
         guessInput.disabled = true; //User can't input number anymore
