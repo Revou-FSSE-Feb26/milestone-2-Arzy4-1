@@ -22,7 +22,7 @@ document.getElementById("navbar-placeholder").innerHTML = `
                     <ul class="text-center absolute -translate-x-[63px] top-full mt-0 pt-2 w-48 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
 
                         <!-- Clicker Game Page -->
-                        <li class="px-4 py-2 duration-300 hover:scale-110 rounded-t-xl">
+                        <li class="px-4 py-2 duration-300 hover:scale-110">
                             <a href="clicker.html">Click to Win</a>
                         </li>
 
@@ -32,7 +32,7 @@ document.getElementById("navbar-placeholder").innerHTML = `
                         </li>
 
                         <!-- Rock Paper Scissor Game Page -->
-                        <li class="px-4 py-2 duration-300 hover:scale-110 rounded-b-xl">
+                        <li class="px-4 py-2 duration-300 hover:scale-110">
                             <a href="rockpaperscissor.html">Rock Paper Scissors</a>
                         </li>
 
