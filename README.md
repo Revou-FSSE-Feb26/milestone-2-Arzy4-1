@@ -132,13 +132,13 @@ After a few minutes, GitHub Pages will automatically build and publish the websi
 
 My Personal Portfolio Website is now live and can be accessed through the link below:
 
-`https://revou-fsse-feb26.github.io/milestone-1-Arzy4/`
+`https://revou-fsse-feb26.github.io/milestone-2-Arzy4-1/`
 
 Once opened, users can navigate through the main sections of the website:
 
 - **Home** – Introduction for visitors
+- **Games** – Gaming page such as "Click To Win", "Guess My Number", and "Rock Paper Scissor" game.
 - **About** – Information about my background and journey
-- **Projects** – A showcase of projects I have worked on
 - **Contact** – A form and links to reach me through various platforms
 
 --- 
