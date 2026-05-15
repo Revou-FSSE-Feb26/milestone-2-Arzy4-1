@@ -9,6 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="contact.css">
     <title>REVOFUN GAMES</title>
+    <style type="text/tailwindcss">
+        @theme {
+            --breakpoint-md: 769px;
+            --breakpoint-sm: 641px;
+        }
+    </style>
 </head>
 <body class="bg-slate-950 text-white">
 
@@ -28,8 +34,8 @@
 
                 <!-- Contact Title & Tagline -->
                 <div class="contact-title flex flex-col items-center text-center gap-2 px-1 pb-5">
-                    <h1 class="text-4xl">LET'S GET IN TOUCH</h1>
-                    <p class="text-2xl">I’d be happy to connect and collaborate with you!</p>
+                    <h1 class="text-4xl max-md:text-2xl max-sm:text-xl">LET'S GET IN TOUCH</h1>
+                    <p class="text-2xl max-md:text-lg max-sm:text-base">I’d be happy to connect and collaborate with you!</p>
                 </div>
 
                 <div class="flex gap-10">
@@ -37,7 +43,7 @@
                     <div class="flex justify-center items-start px-1 gap-10">
                         <div class="flex flex-col items-center justify-center">
                             <form action="#" method="post">
-                                <div class="cp-container [&_input]:h-[30px] [&_textarea]:h-[150px] w-[600px]">
+                                <div class="cp-container [&_input]:h-[30px] [&_textarea]:h-[150px] w-[600px] max-md:w-[400px] max-sm:w-[300px]">
 
                                     <!-- Name Input Form -->
                                     <div class="flex mb-1 gap-4">
@@ -80,8 +86,8 @@
 
                     <!-- Contact Information Icon and Social Links  -->
                     <div class="social-links-list">
-                        <h2 class="text-center text-2xl">Contact Information</h2>
-                        <ul class="flex flex-col gap-10 pt-5 [&_h3]:text-sm [&_span]:text-xl">
+                        <h2 class="text-center text-2xl max-md:text-lg">Contact Information</h2>
+                        <ul class="flex flex-col gap-10 pt-5 [&_h3]:text-sm [&_span]:text-xl max-md:[&_span]:text-base">
 
                             <!-- Linkedin -->
                             <li>

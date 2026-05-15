@@ -10,6 +10,21 @@ body{
 .navbar.activate{
     background-color: #1e1b4b;
 }
+.navbar a::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 80%;
+    height: 2px;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: left;
+}
+.navbar a:hover::after{
+    transform: translateX(-50%) scaleX(1);
+}
 .group i {
     transition: transform 0.3s ease;
 }
@@ -47,14 +62,12 @@ body{
 /* Offer */
 .focus h2, .focus p, .offer img{
     opacity: 0;
-    transform: translateX(-15%);
     animation: left forwards;
     animation-timeline: view();
     animation-range: entry 20% cover 50%;
 }
 .offer h2, .offer p, .focus img{
     opacity: 0;
-    transform: translateX(15%);
     animation: right forwards;
     animation-timeline: view();
     animation-range: entry 20% cover 50%;
@@ -124,7 +137,7 @@ body{
 @keyframes left{
     from{
         opacity: 0;
-        transform: translateX(-15%);
+        transform: translateX(-20%);
     }
     to{
         opacity: 1;
@@ -134,7 +147,7 @@ body{
 @keyframes right{
     from{
         opacity: 0;
-        transform: translateX(15%);
+        transform: translateX(20%);
     }
     to{
         opacity: 1;

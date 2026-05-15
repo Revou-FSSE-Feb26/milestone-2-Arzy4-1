@@ -4,11 +4,27 @@ body{
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+    overflow-x: hidden;
 }
 
 /* Navbar */
 .navbar.activate{
     background-color: #1e1b4b;
+}
+.navbar a::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 80%;
+    height: 2px;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: left;
+}
+.navbar a:hover::after{
+    transform: translateX(-50%) scaleX(1);
 }
 .group i {
     transition: transform 0.3s ease;
